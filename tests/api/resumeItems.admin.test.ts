@@ -8,12 +8,12 @@ vi.mock("@/lib/requireAdmin", () => ({
 }));
 
 import { POST as AdminResumePOST } from "@/app/api/admin/resume-items/route";
-import { GET as PublicResumeGET } from "@/app/api/resume/route";
+import { GET as PublicResumeGET } from "@/app/api/resume-items/route";
 
 describe("ADMIN /api/admin/resume-items + PUBLIC /api/resume", () => {
   it("creates a resume item via admin POST and lists it via public GET", async () => {
     const payload = {
-      section: "experience", 
+      section: "experience",
       title: "Senior Frontend Engineer",
       company: "Corsair",
       startDate: "2022-01-01",
@@ -36,7 +36,9 @@ describe("ADMIN /api/admin/resume-items + PUBLIC /api/resume", () => {
     expect(created.title).toBe(payload.title);
     expect(created.section).toBe("experience");
 
-    const getRes = await PublicResumeGET(req("http://test.local/api/resume"));
+    const getRes = await PublicResumeGET(
+      req("http://test.local/api/resume-items")
+    );
     expect(getRes.ok).toBe(true);
     const data = await getRes.json();
 
