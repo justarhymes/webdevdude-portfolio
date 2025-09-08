@@ -1,0 +1,3415 @@
+[
+  {
+    "id": "Z07R9RAAACAARQsS",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22Z07R9RAAACAARQsS%22%29+%5D%5D",
+    "tags": ["gamer-sensei"],
+    "first_publication_date": "2025-02-25T18:58:12+0000",
+    "last_publication_date": "2025-02-25T19:09:01+0000",
+    "slugs": ["gamer-sensei-corsair"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Gamer Sensei (Corsair)",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "abbreviation": "cor",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Revamped Gamer Sensei coaching platform after Corsair purchase.",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OTyYAACYAfWvf",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "business",
+        "first_publication_date": "2018-09-04T18:26:27+0000",
+        "last_publication_date": "2024-12-03T21:49:08+0000",
+        "link_type": "Document",
+        "key": "85f73109-6021-435b-9beb-4f68fb30af8c",
+        "isBroken": false
+      },
+      "year": "2020-2024",
+      "website_link": {
+        "link_type": "Web",
+        "key": "54a6dd9e-cdf2-4f6f-a7e8-dbffee7b83e9",
+        "url": "https://gamersensei.com",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "id": "Z099aRAAACAARgas",
+        "type": "client",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "corsair",
+        "first_publication_date": "2024-12-03T21:51:38+0000",
+        "last_publication_date": "2024-12-03T21:51:38+0000",
+        "link_type": "Document",
+        "key": "ab15231b-8015-4c7e-a27a-b0d085a8105a",
+        "isBroken": false
+      },
+      "studio": {
+        "link_type": "Document"
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "e87bde0e-5897-4ae8-8cd9-adcf25327469",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "d4bf96a5-c339-43c9-9a25-03dd80b0dd9c",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GniYAACUAfUnP",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "project-management",
+            "first_publication_date": "2018-09-04T17:54:00+0000",
+            "last_publication_date": "2018-09-04T17:54:00+0000",
+            "link_type": "Document",
+            "key": "9647feb8-37c9-486a-a8b4-d6db873400b0",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47HniYAACYAfU5H",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "backend-development",
+            "first_publication_date": "2018-09-04T17:57:55+0000",
+            "last_publication_date": "2018-09-04T17:57:55+0000",
+            "link_type": "Document",
+            "key": "df8b12a0-173d-4297-bb0b-cb9906c48502",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "be9a1d0f-9318-461d-9298-c36cdaabdf70",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RyiYAACYAfXt7",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "angularjs",
+            "first_publication_date": "2018-09-04T18:41:18+0000",
+            "last_publication_date": "2018-09-04T18:41:18+0000",
+            "link_type": "Document",
+            "key": "ba8d5f5b-b352-48e2-841a-b60d41d14d33",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47T5iYAACYAfYTx",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "rest-api",
+            "first_publication_date": "2018-09-04T18:50:20+0000",
+            "last_publication_date": "2018-09-04T18:50:55+0000",
+            "link_type": "Document",
+            "key": "12aa77c2-94ee-4da7-bb88-ff527e3aef41",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W49gSyYAACYAf_Bt",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ruby-on-rails",
+            "first_publication_date": "2018-09-05T04:49:20+0000",
+            "last_publication_date": "2018-09-05T04:49:20+0000",
+            "link_type": "Document",
+            "key": "693f0b62-ac76-48c6-baee-9f6ae05eea9f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TySYAACQAfYRv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "yarn",
+            "first_publication_date": "2018-09-04T18:49:53+0000",
+            "last_publication_date": "2018-09-04T18:49:53+0000",
+            "link_type": "Document",
+            "key": "e205e7dd-06a8-4261-a095-68c60a7036d7",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W49gyyYAACQAf_Kk",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "gem",
+            "first_publication_date": "2018-09-05T04:51:26+0000",
+            "last_publication_date": "2018-09-05T04:51:26+0000",
+            "link_type": "Document",
+            "key": "b4a4a62b-2bc9-489b-a7c9-d8e25dc57010",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SOCYAACUAfX1z",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "node.js",
+            "first_publication_date": "2018-09-04T18:43:22+0000",
+            "last_publication_date": "2018-09-04T18:43:22+0000",
+            "link_type": "Document",
+            "key": "835542a9-9b19-40f9-a61e-b5222d7cac62",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "1b6ec601-b3ea-4ee4-8ebf-9e963d3530a6",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "Z74SihAAACIArUdq",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "tailwind",
+            "first_publication_date": "2025-02-25T18:57:17+0000",
+            "last_publication_date": "2025-02-25T18:57:17+0000",
+            "link_type": "Document",
+            "key": "24a7c7de-d0c2-44d3-a5a8-bf6324a91b79",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "83bf27d7-5063-4794-bfb8-7e25e49d7aa6",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "56dc800e-3d95-4e8a-b988-279a348ca22c",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "b5c48890-94cb-4221-96e9-25094055e3ae",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XHrX8xIAACEAT1xN",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "heroku",
+            "first_publication_date": "2019-03-02T19:22:32+0000",
+            "last_publication_date": "2019-03-02T19:22:32+0000",
+            "link_type": "Document",
+            "key": "09dc969b-a7e6-4131-af14-8641914ecf1e",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XH8a8xIAACEAYe7L",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "amazon-web-services",
+            "first_publication_date": "2019-03-06T00:57:27+0000",
+            "last_publication_date": "2019-03-06T00:57:27+0000",
+            "link_type": "Document",
+            "key": "4562b113-92a9-431e-b348-c164d9ce69ba",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 17,
+      "gallery_count": 2
+    }
+  },
+  {
+    "id": "Z74UahAAACIArUoq",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22Z74UahAAACIArUoq%22%29+%5D%5D",
+    "tags": [],
+    "first_publication_date": "2025-02-25T19:05:59+0000",
+    "last_publication_date": "2025-02-25T19:10:49+0000",
+    "slugs": ["jellybox-studio"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Jellybox Studio",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "abbreviation": "jb",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Next app that dynamically pulls from headless CMS, and navigates on scroll.",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "8154ef6a-a13d-49cb-bc53-0ec586601bb6",
+        "isBroken": false
+      },
+      "year": "2023",
+      "website_link": {
+        "link_type": "Web",
+        "key": "c61b95f8-8493-4cda-baba-d43fc147ebb8",
+        "url": "https://www.jellybox.studio/"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49LwCYAACcAf5W5",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "gene-goldstein",
+        "first_publication_date": "2018-09-05T03:21:40+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "ef3c9048-f851-4911-9337-c912c5684b18",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "f961f0bd-ba8d-4dc5-8c5f-47b791d28033",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47HniYAACYAfU5H",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "backend-development",
+            "first_publication_date": "2018-09-04T17:57:55+0000",
+            "last_publication_date": "2018-09-04T17:57:55+0000",
+            "link_type": "Document",
+            "key": "bcd42d24-29aa-4661-9d99-a82f0e9bbc69",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GniYAACUAfUnP",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "project-management",
+            "first_publication_date": "2018-09-04T17:54:00+0000",
+            "last_publication_date": "2018-09-04T17:54:00+0000",
+            "link_type": "Document",
+            "key": "c4ffefcd-7c26-4021-b791-4f1eecb01e4f",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "fc016168-894f-410c-abae-8372e27948ce",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "Z74SdhAAACEArUdJ",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "next.js",
+            "first_publication_date": "2025-02-25T18:56:58+0000",
+            "last_publication_date": "2025-02-25T18:56:58+0000",
+            "link_type": "Document",
+            "key": "08a80a5e-4953-4d76-9043-91ce1fe2fc28",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "2f7977fd-9dc0-418f-924a-6eb80a4f94ed",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "Z74UdxAAACIArUpA",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "canvas",
+            "first_publication_date": "2025-02-25T19:05:29+0000",
+            "last_publication_date": "2025-02-25T19:05:29+0000",
+            "link_type": "Document",
+            "key": "8471e565-5ace-4aab-b6e9-1e2f669eece5",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YxiYAACYAfZqv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "history.js",
+            "first_publication_date": "2018-09-04T19:11:07+0000",
+            "last_publication_date": "2018-09-04T19:11:07+0000",
+            "link_type": "Document",
+            "key": "7e67bc8f-bde8-430e-a8f0-18495855ed0b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RTSYAACUAfXlP",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "npm",
+            "first_publication_date": "2018-09-04T18:39:17+0000",
+            "last_publication_date": "2018-09-04T18:39:17+0000",
+            "link_type": "Document",
+            "key": "3c9eb25c-0e0c-4db3-ac5f-eca2728f4975",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "b957d676-2e03-4af5-97f3-456d2b0efada",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "9921b87e-9137-4673-9ccf-15306ef6dcaf",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 16,
+      "gallery_count": 3
+    }
+  },
+  {
+    "id": "XHrx3hIAACEAT86f",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XHrx3hIAACEAT86f%22%29+%5D%5D",
+    "tags": ["picmage"],
+    "first_publication_date": "2019-03-02T21:13:06+0000",
+    "last_publication_date": "2025-02-25T19:19:44+0000",
+    "slugs": ["picmage"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Picmage",
+          "spans": []
+        }
+      ],
+      "abbreviation": "pm",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Fullstack image host/storage app with REST API for integration with other sites.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "c5053db3-753a-4c8a-9e52-02dafca5fb38",
+        "isBroken": false
+      },
+      "year": "TBA",
+      "website_link": {
+        "link_type": "Web",
+        "key": "d54d948e-717b-45ca-aa88-574b40e37423",
+        "url": "https://picmage.io/"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "link_type": "Document"
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "c147f923-dbe4-40f0-8631-c301eac21548",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "357ae39f-31f1-4c5a-bc89-33fc42b6606e",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GPSYAACQAfUgS",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "branding",
+            "first_publication_date": "2018-09-04T17:52:02+0000",
+            "last_publication_date": "2018-09-04T17:52:02+0000",
+            "link_type": "Document",
+            "key": "8e528abe-8fdc-485e-8465-bcaf2b6c8fee",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "317ceea3-052a-4e6c-9735-387d906a1579",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SGiYAACQAfXzr",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "redux",
+            "first_publication_date": "2018-09-04T18:42:39+0000",
+            "last_publication_date": "2018-09-04T18:42:39+0000",
+            "link_type": "Document",
+            "key": "35c57c68-62b7-41d0-ad73-638436e36b62",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SOCYAACUAfX1z",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "node.js",
+            "first_publication_date": "2018-09-04T18:43:22+0000",
+            "last_publication_date": "2018-09-04T18:43:22+0000",
+            "link_type": "Document",
+            "key": "2b8ad89f-2a28-425e-b5f8-5716d5346f79",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47T5iYAACYAfYTx",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "rest-api",
+            "first_publication_date": "2018-09-04T18:50:20+0000",
+            "last_publication_date": "2018-09-04T18:50:55+0000",
+            "link_type": "Document",
+            "key": "518f1d82-3bf5-496d-aa1a-6d66f34e9583",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TySYAACQAfYRv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "yarn",
+            "first_publication_date": "2018-09-04T18:49:53+0000",
+            "last_publication_date": "2018-09-04T18:49:53+0000",
+            "link_type": "Document",
+            "key": "186e858f-6957-4e45-b871-6d4d1091ad86",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "d2c16272-215c-4285-a9f3-c46b0bd65999",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47O3SYAACUAfW5d",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "design",
+            "first_publication_date": "2018-09-04T18:28:54+0000",
+            "last_publication_date": "2018-09-04T18:28:54+0000",
+            "link_type": "Document",
+            "key": "0063070f-ba1c-4218-9d6c-ff889ec5d0b7",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XH8a8xIAACEAYe7L",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "amazon-web-services",
+            "first_publication_date": "2019-03-06T00:57:27+0000",
+            "last_publication_date": "2019-03-06T00:57:27+0000",
+            "link_type": "Document",
+            "key": "623249e7-a04e-4a23-9ac8-c4a618b07667",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 15,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "XHnTtBIAAB8ASuYL",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XHnTtBIAAB8ASuYL%22%29+%5D%5D",
+    "tags": ["senseibot"],
+    "first_publication_date": "2019-03-02T00:52:08+0000",
+    "last_publication_date": "2020-02-03T21:11:19+0000",
+    "slugs": ["senseibotleague-meta", "senseibot"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "SenseiBot/League Meta",
+          "spans": []
+        }
+      ],
+      "abbreviation": "sb",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Discord bot, Node bot, and Vue.js app for aggregating eSports data.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OTyYAACYAfWvf",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "business",
+        "first_publication_date": "2018-09-04T18:26:27+0000",
+        "last_publication_date": "2024-12-03T21:49:08+0000",
+        "link_type": "Document",
+        "key": "27d448b4-d3b3-4497-b600-1f1d8cd725f5",
+        "isBroken": false
+      },
+      "year": "2018 - 2019",
+      "website_link": {
+        "link_type": "Web",
+        "key": "1fdd5859-307a-49d1-ba82-0b3580cc579f",
+        "url": "https://leaguemeta.gg",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Web",
+        "key": "4e31f722-4102-4dc0-a6a8-b5a299b97d79",
+        "url": "https://go.senseibot.gg"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49L2iYAACQAf5Yw",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "gamer-sensei",
+        "first_publication_date": "2018-09-05T03:22:06+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "5110ff2f-e06b-4560-9095-8dfaf103d7d6",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "9df81081-4276-4a0b-8984-3413b18360df",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W49g7yYAACUAf_NL",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "bot-development",
+            "first_publication_date": "2018-09-05T04:52:04+0000",
+            "last_publication_date": "2018-09-05T04:52:04+0000",
+            "link_type": "Document",
+            "key": "0bf0acad-77cb-48fb-9cf7-e7a7b090fa51",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "ec6ecc08-1a54-417f-bb4c-d875dc6a00b2",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47HniYAACYAfU5H",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "backend-development",
+            "first_publication_date": "2018-09-04T17:57:55+0000",
+            "last_publication_date": "2018-09-04T17:57:55+0000",
+            "link_type": "Document",
+            "key": "9299b1f9-5d24-46a9-b8fc-cdab86761435",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "XHnTwxIAACIASuZQ",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "vue",
+            "first_publication_date": "2019-03-02T00:52:33+0000",
+            "last_publication_date": "2019-03-02T00:55:41+0000",
+            "link_type": "Document",
+            "key": "d597a901-97f9-48e8-8c74-353d3be3687a",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XHnT6RIAACIASub7",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "nuxt",
+            "first_publication_date": "2019-03-02T00:53:06+0000",
+            "last_publication_date": "2019-03-02T00:55:56+0000",
+            "link_type": "Document",
+            "key": "dea728a1-545f-4743-87c6-4aee87efa176",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "45cc8511-c717-422a-9f78-77b963332642",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RTSYAACUAfXlP",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "npm",
+            "first_publication_date": "2018-09-04T18:39:17+0000",
+            "last_publication_date": "2018-09-04T18:39:17+0000",
+            "link_type": "Document",
+            "key": "37d9df2d-c0ae-4ee3-a680-274e14b3d7b6",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "eb806463-627f-4db6-8499-a49dc5111366",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XHrYUBIAACEAT13z",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "google-cloud-platform",
+            "first_publication_date": "2019-03-02T19:24:06+0000",
+            "last_publication_date": "2019-03-02T19:24:06+0000",
+            "link_type": "Document",
+            "key": "e3cfc517-52ba-45f6-a615-7ae1bb340ccc",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 14,
+      "gallery_count": 3
+    }
+  },
+  {
+    "id": "XHnRFhIAACEAStqC",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XHnRFhIAACEAStqC%22%29+%5D%5D",
+    "tags": ["qbomb"],
+    "first_publication_date": "2019-03-02T00:40:59+0000",
+    "last_publication_date": "2025-02-25T19:12:26+0000",
+    "slugs": ["qbomb"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Qbomb",
+          "spans": []
+        }
+      ],
+      "abbreviation": "qb",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "React app with dynamic shows list for the band Qbomb",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "a76edcbc-9808-4351-87dd-59a2ebac5e15",
+        "isBroken": false
+      },
+      "year": "2019",
+      "website_link": {
+        "link_type": "Web",
+        "key": "15b2d8ec-3c50-4b47-8f4c-7c1908bbbded",
+        "url": "http://www.qbomb.band"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49LwCYAACcAf5W5",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "gene-goldstein",
+        "first_publication_date": "2018-09-05T03:21:40+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "22d9311b-2331-4d72-b7df-a15be2bdff5f",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "40071053-cf9e-4d65-a814-679ee00ae547",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "bd308890-6b9e-4a08-b10b-208cab33aa35",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "30a2dd0f-0463-4064-a490-e1571320d11e",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SGiYAACQAfXzr",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "redux",
+            "first_publication_date": "2018-09-04T18:42:39+0000",
+            "last_publication_date": "2018-09-04T18:42:39+0000",
+            "link_type": "Document",
+            "key": "f7529c53-24cf-4ac6-9324-28a8566e7244",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "40f4650c-4884-4bcd-a286-222b8673bbe4",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "b7e6527b-d837-4694-a918-781f406c13a5",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TySYAACQAfYRv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "yarn",
+            "first_publication_date": "2018-09-04T18:49:53+0000",
+            "last_publication_date": "2018-09-04T18:49:53+0000",
+            "link_type": "Document",
+            "key": "f7cfb586-824c-4b7d-bb87-6068659ce87a",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "XHnRPxIAAB8ASts5",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "google-spreadsheet-scripts",
+            "first_publication_date": "2019-03-02T00:41:41+0000",
+            "last_publication_date": "2019-03-02T00:41:41+0000",
+            "link_type": "Document",
+            "key": "4d049e0b-1178-45e0-8984-c0b613e3781b",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 14,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "XHnSrxIAACIASuGP",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XHnSrxIAACIASuGP%22%29+%5D%5D",
+    "tags": ["ninabee-art-portfolio"],
+    "first_publication_date": "2019-03-02T00:47:47+0000",
+    "last_publication_date": "2025-02-25T19:17:50+0000",
+    "slugs": ["ninabee-art-portfolio"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Ninabee Art Portfolio",
+          "spans": []
+        }
+      ],
+      "abbreviation": "nb",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Art portfolio created using Next, React, and GraphCMS.",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "e69d6d78-7229-411c-b625-02291a306052",
+        "isBroken": false
+      },
+      "year": "2017, 2021",
+      "website_link": {
+        "link_type": "Web",
+        "key": "04f6b8cc-3def-40c7-b74e-8c44868029e5",
+        "url": "https://ninabee.art"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49L-iYAACYAf5bB",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "nina-boyce",
+        "first_publication_date": "2018-09-05T03:22:39+0000",
+        "last_publication_date": "2024-12-03T21:51:05+0000",
+        "link_type": "Document",
+        "key": "745a9fa8-3666-4b95-8e65-7c1381689496",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "1927a223-3910-4b3c-8965-898c37d6ec9e",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "914cfceb-f83d-49d2-bbbf-b3b418f4fff8",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "b40d783f-ea61-46ad-9a95-ddafdb9c0139",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47HniYAACYAfU5H",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "backend-development",
+            "first_publication_date": "2018-09-04T17:57:55+0000",
+            "last_publication_date": "2018-09-04T17:57:55+0000",
+            "link_type": "Document",
+            "key": "b686b7cd-8b0b-425f-a562-4da5157dcf34",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "Z74SdhAAACEArUdJ",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "next.js",
+            "first_publication_date": "2025-02-25T18:56:58+0000",
+            "last_publication_date": "2025-02-25T18:56:58+0000",
+            "link_type": "Document",
+            "key": "fe5756de-3d2a-4e18-90e8-58099c7a0661",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "b8b37384-29d6-41e8-a36d-ebadaf8148a2",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "edcb2479-418e-47e4-93b3-4ca956298183",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47URSYAACQAfYab",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "wordpress",
+            "first_publication_date": "2018-09-04T18:51:53+0000",
+            "last_publication_date": "2018-09-04T18:52:16+0000",
+            "link_type": "Document",
+            "key": "f0ffb108-7747-4258-b3f0-4f4e39ed4c83",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "309f5d43-f482-49d9-ac6e-deea3594c885",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RTSYAACUAfXlP",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "npm",
+            "first_publication_date": "2018-09-04T18:39:17+0000",
+            "last_publication_date": "2018-09-04T18:39:17+0000",
+            "link_type": "Document",
+            "key": "58769baa-511f-4aac-97f9-a85903a683db",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "224964c8-b9f4-44aa-8bdb-3da1c0edd5db",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "660ba036-be24-4275-8334-a8a8e0c48e47",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47O3SYAACUAfW5d",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "design",
+            "first_publication_date": "2018-09-04T18:28:54+0000",
+            "last_publication_date": "2018-09-04T18:28:54+0000",
+            "link_type": "Document",
+            "key": "06c0cddf-8515-46c8-aa81-0229ce3c1fc2",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 13,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "W49fwSYAACQAf-4C",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W49fwSYAACQAf-4C%22%29+%5D%5D",
+    "tags": ["gamer-sensei"],
+    "first_publication_date": "2018-09-05T04:53:40+0000",
+    "last_publication_date": "2025-02-25T19:12:09+0000",
+    "slugs": ["gamer-sensei"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Gamer Sensei",
+          "spans": [],
+          "direction": "ltr"
+        }
+      ],
+      "abbreviation": "gs",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Coaching scheduling platform, and software development for eSports startup.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OTyYAACYAfWvf",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "business",
+        "first_publication_date": "2018-09-04T18:26:27+0000",
+        "last_publication_date": "2024-12-03T21:49:08+0000",
+        "link_type": "Document",
+        "key": "04d29e8d-d875-4ce8-a429-d84bd198a9da",
+        "isBroken": false
+      },
+      "year": "2016 - 2020",
+      "website_link": {
+        "link_type": "Web",
+        "key": "b7c1a877-ddc9-4ca2-9ca1-27a91c28d1bd",
+        "url": "https://www.gamersensei.com",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49L2iYAACQAf5Yw",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "gamer-sensei",
+        "first_publication_date": "2018-09-05T03:22:06+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "5d186e61-ba26-46e0-a81c-72931b3b4504",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "f7a4c997-76e4-482c-8567-446aebebb0ef",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "6bf3698d-2525-44f1-b374-b260213e3328",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47HniYAACYAfU5H",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "backend-development",
+            "first_publication_date": "2018-09-04T17:57:55+0000",
+            "last_publication_date": "2018-09-04T17:57:55+0000",
+            "link_type": "Document",
+            "key": "b927523f-1137-4d8b-9931-d3affbdd6c64",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "681e6528-9bcd-43b4-9d3f-d12f9f25202e",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SxSYAACUAfX_r",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "component-design",
+            "first_publication_date": "2018-09-04T18:45:39+0000",
+            "last_publication_date": "2018-09-04T18:45:39+0000",
+            "link_type": "Document",
+            "key": "5e445ff0-4293-4e68-8819-ccbf77f3ced4",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "7ec4c8af-ae92-4e87-9229-b9c1bef95b44",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "ca7d26ec-bc61-473d-a806-2e2c1cad201b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "d7b02931-e054-487c-84df-1fc45db64d2b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "48a2f7f2-97d1-4e9f-85df-00c7d926be8d",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RyiYAACYAfXt7",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "angularjs",
+            "first_publication_date": "2018-09-04T18:41:18+0000",
+            "last_publication_date": "2018-09-04T18:41:18+0000",
+            "link_type": "Document",
+            "key": "a1ff2efa-89cb-413a-b12e-3ebe476f44c8",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W49gSyYAACYAf_Bt",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ruby-on-rails",
+            "first_publication_date": "2018-09-05T04:49:20+0000",
+            "last_publication_date": "2018-09-05T04:49:20+0000",
+            "link_type": "Document",
+            "key": "72e0edc8-a566-41db-be55-025600c2faff",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "e1955541-5df7-4a0e-b3b8-ba53c3f935a1",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RTSYAACUAfXlP",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "npm",
+            "first_publication_date": "2018-09-04T18:39:17+0000",
+            "last_publication_date": "2018-09-04T18:39:17+0000",
+            "link_type": "Document",
+            "key": "99247488-370b-4019-9d06-ef3d5dffc480",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TySYAACQAfYRv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "yarn",
+            "first_publication_date": "2018-09-04T18:49:53+0000",
+            "last_publication_date": "2018-09-04T18:49:53+0000",
+            "link_type": "Document",
+            "key": "bee62152-90f3-410d-b438-f50cb31036eb",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47RJSYAACQAfXib",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "bower",
+            "first_publication_date": "2018-09-04T18:38:34+0000",
+            "last_publication_date": "2018-09-04T18:38:34+0000",
+            "link_type": "Document",
+            "key": "34b0bdf3-01e9-4f34-8a3d-1840ec1504ff",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W49gyyYAACQAf_Kk",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "gem",
+            "first_publication_date": "2018-09-05T04:51:26+0000",
+            "last_publication_date": "2018-09-05T04:51:26+0000",
+            "link_type": "Document",
+            "key": "649a3c04-eccb-4883-a93f-e672311000bf",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 12,
+      "gallery_count": 3
+    }
+  },
+  {
+    "id": "XHrfuBIAACIAT36O",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XHrfuBIAACIAT36O%22%29+%5D%5D",
+    "tags": ["gothology"],
+    "first_publication_date": "2019-03-02T19:55:40+0000",
+    "last_publication_date": "2019-03-02T20:57:41+0000",
+    "slugs": ["gothology"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Gothology",
+          "spans": []
+        }
+      ],
+      "abbreviation": "gth",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Firebase and React pitch submission web app",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "9a60702f-d91b-48f6-a500-da466a7ef3fe",
+        "isBroken": false
+      },
+      "year": "2018",
+      "website_link": {
+        "link_type": "Web",
+        "key": "8fd14e02-8063-480a-a844-e7da40be568d",
+        "url": "https://gothologycomics.com"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "link_type": "Document"
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "XHrXxxIAACEAT1uI",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "firebase-development",
+            "first_publication_date": "2019-03-02T19:22:06+0000",
+            "last_publication_date": "2019-03-02T19:22:06+0000",
+            "link_type": "Document",
+            "key": "83e53ce9-f1d7-46d0-9981-b190daa68999",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "b582daa8-e751-47c9-83e8-ee65858ad4f0",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W49g3SYAACYAf_L4",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "software-development",
+            "first_publication_date": "2018-09-05T04:51:44+0000",
+            "last_publication_date": "2018-09-05T04:51:44+0000",
+            "link_type": "Document",
+            "key": "38565bd0-51a0-4b30-9a49-c548e4a60909",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "126ce8e2-1c15-4397-a550-9e3521305225",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GPSYAACQAfUgS",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "branding",
+            "first_publication_date": "2018-09-04T17:52:02+0000",
+            "last_publication_date": "2018-09-04T17:52:02+0000",
+            "link_type": "Document",
+            "key": "49beec32-c7a4-497a-9412-26ab39cd1676",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GniYAACUAfUnP",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "project-management",
+            "first_publication_date": "2018-09-04T17:54:00+0000",
+            "last_publication_date": "2018-09-04T17:54:00+0000",
+            "link_type": "Document",
+            "key": "5a7bc1bc-da0a-4d79-bc4e-c18b3beac79f",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "XHrYBxIAACIAT1yp",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "firebase",
+            "first_publication_date": "2019-03-02T19:22:53+0000",
+            "last_publication_date": "2019-03-02T19:22:53+0000",
+            "link_type": "Document",
+            "key": "76c1cc6b-4059-45c4-95f8-bf2dfb3add4e",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SAyYAACUAfXyD",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "react",
+            "first_publication_date": "2018-09-04T18:42:21+0000",
+            "last_publication_date": "2018-09-04T18:42:21+0000",
+            "link_type": "Document",
+            "key": "6dd2a7de-dca2-47da-906c-407fc0ca8c16",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "5f8d4cb5-84b5-4b22-8940-10f02c4257ce",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "f8eb63a0-028a-469c-bbdb-d0dcd78e43d9",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TySYAACQAfYRv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "yarn",
+            "first_publication_date": "2018-09-04T18:49:53+0000",
+            "last_publication_date": "2018-09-04T18:49:53+0000",
+            "link_type": "Document",
+            "key": "dba66ebc-337e-4ce4-909a-c40ac80eefdb",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "c2e8e38c-d053-402e-a568-18604b521d6d",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "be4811b4-5432-40f1-bb8e-0d2cb87118c0",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47O3SYAACUAfW5d",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "design",
+            "first_publication_date": "2018-09-04T18:28:54+0000",
+            "last_publication_date": "2018-09-04T18:28:54+0000",
+            "link_type": "Document",
+            "key": "408f686a-7143-4f89-b3c3-cde9d722c45c",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47SxSYAACUAfX_r",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "component-design",
+            "first_publication_date": "2018-09-04T18:45:39+0000",
+            "last_publication_date": "2018-09-04T18:45:39+0000",
+            "link_type": "Document",
+            "key": "9e0a54bc-f7d9-4503-b8de-430ad35a4360",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 11,
+      "gallery_count": 4
+    }
+  },
+  {
+    "id": "W49I4SYAACUAf4j2",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W49I4SYAACUAf4j2%22%29+%5D%5D",
+    "tags": ["dapshow"],
+    "first_publication_date": "2018-09-05T03:09:29+0000",
+    "last_publication_date": "2019-03-05T23:48:53+0000",
+    "slugs": ["dapshow"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "DAPshow",
+          "spans": []
+        }
+      ],
+      "abbreviation": "ds",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "A shopify storefront and a custom WP Network that heavily incorporate custom frameworks and Comic Easel.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OTyYAACYAfWvf",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "business",
+        "first_publication_date": "2018-09-04T18:26:27+0000",
+        "last_publication_date": "2024-12-03T21:49:08+0000",
+        "link_type": "Document",
+        "key": "1d92af94-1fc7-48dc-9b9d-4945c8e7df58",
+        "isBroken": false
+      },
+      "year": "2015 - Present",
+      "website_link": {
+        "link_type": "Web",
+        "key": "9d551f78-2e5e-4163-be3f-1f9b1ae20586",
+        "url": "http://dap.show",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Web",
+        "key": "60e0567d-1774-4974-997d-59f25126a69d",
+        "url": "https://shop.dapshow.com"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "link_type": "Document"
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "d07d0086-da56-4002-8c74-4d62ea505bea",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "1b18a203-ecad-45a4-9634-2de72b2321a7",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GPSYAACQAfUgS",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "branding",
+            "first_publication_date": "2018-09-04T17:52:02+0000",
+            "last_publication_date": "2018-09-04T17:52:02+0000",
+            "link_type": "Document",
+            "key": "27fbb369-8022-4113-9c4b-771a3956ac44",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47GdyYAACUAfUka",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "product",
+            "first_publication_date": "2018-09-04T17:53:01+0000",
+            "last_publication_date": "2018-09-04T17:53:01+0000",
+            "link_type": "Document",
+            "key": "c397f36e-66bd-4907-b1d6-a53500240a8f",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "XH8I4hIAAB8AYZ7n",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "shopify",
+            "first_publication_date": "2019-03-05T23:40:24+0000",
+            "last_publication_date": "2019-03-05T23:40:24+0000",
+            "link_type": "Document",
+            "key": "86cb0a05-bd7a-46f9-a500-a8f2cf0f5c08",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47URSYAACQAfYab",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "wordpress",
+            "first_publication_date": "2018-09-04T18:51:53+0000",
+            "last_publication_date": "2018-09-04T18:52:16+0000",
+            "link_type": "Document",
+            "key": "fb395d56-0d82-4ace-af24-3dba8b68ef3a",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47O3SYAACUAfW5d",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "design",
+            "first_publication_date": "2018-09-04T18:28:54+0000",
+            "last_publication_date": "2018-09-04T18:28:54+0000",
+            "link_type": "Document",
+            "key": "16c255f5-42b1-4a07-8fe3-e61701448c6f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "9fcdd06f-542f-4ab1-a872-c00c2bfe65ad",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "2c18685f-b8b7-448a-8229-e2fa1ebe89f8",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PqyYAACcAfXIG",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "jquery",
+            "first_publication_date": "2018-09-04T18:32:24+0000",
+            "last_publication_date": "2018-09-04T18:32:24+0000",
+            "link_type": "Document",
+            "key": "f24e35c3-f336-4d39-b5ab-c445a3421759",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47UZyYAACYAfYc5",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "comic-easel",
+            "first_publication_date": "2018-09-04T18:52:27+0000",
+            "last_publication_date": "2018-09-04T18:52:27+0000",
+            "link_type": "Document",
+            "key": "5f4e4a94-4ef0-4a45-8093-ef3e6badc459",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YfyYAACQAfZlz",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "php",
+            "first_publication_date": "2018-09-04T19:09:55+0000",
+            "last_publication_date": "2018-09-04T19:09:55+0000",
+            "link_type": "Document",
+            "key": "513fc2ac-67eb-43e1-89bc-743e963f8ab3",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 10,
+      "gallery_count": 3
+    }
+  },
+  {
+    "id": "W49H1yYAACYAf4RY",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W49H1yYAACYAf4RY%22%29+%5D%5D",
+    "tags": ["la-phil--hollywood-bowl"],
+    "first_publication_date": "2018-09-05T03:05:06+0000",
+    "last_publication_date": "2019-03-02T09:02:10+0000",
+    "slugs": ["la-phil--hollywood-bowl"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "LA Phil & Hollywood Bowl",
+          "spans": []
+        }
+      ],
+      "abbreviation": "lapa",
+      "description": [
+        {
+          "type": "heading1",
+          "text": "Drupal network and mobile apps for the LA Phil and Hollywood Bowl venues.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "abd12685-52b8-43a8-9340-6aeecd35fec9",
+        "isBroken": false
+      },
+      "year": "2015",
+      "website_link": {
+        "link_type": "Any"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "id": "W47bjyYAACQAfacW",
+        "type": "client",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "los-angeles-philharmonic-association",
+        "first_publication_date": "2018-09-04T19:22:59+0000",
+        "last_publication_date": "2018-09-04T19:22:59+0000",
+        "link_type": "Document",
+        "key": "3ab31bc2-d40c-4231-ad4a-866cea0a0cce",
+        "isBroken": false
+      },
+      "studio": {
+        "id": "W47a9CYAACYAfaRg",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "pxl-bros",
+        "first_publication_date": "2018-09-04T19:20:29+0000",
+        "last_publication_date": "2024-12-03T21:51:07+0000",
+        "link_type": "Document",
+        "key": "0d2df049-f41d-4c13-bcd9-b4ada3c4f810",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "a03a2053-0d74-44dd-89ff-a33c3c108c4c",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47G7iYAACYAfUs9",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "mobile-app-development",
+            "first_publication_date": "2018-09-04T17:54:59+0000",
+            "last_publication_date": "2018-09-04T17:54:59+0000",
+            "link_type": "Document",
+            "key": "aac0de6a-4cfd-4d2b-b0f4-6a53abb7acac",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SxSYAACUAfX_r",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "component-design",
+            "first_publication_date": "2018-09-04T18:45:39+0000",
+            "last_publication_date": "2018-09-04T18:45:39+0000",
+            "link_type": "Document",
+            "key": "aabadd46-965b-4110-b163-b3b5c96b8f6e",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "5f7ba26f-822a-426f-abc7-f57d2719fcf1",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "2e69d6f0-ec7c-4275-921b-4b1f1fc600b0",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "86005f25-b199-4a5b-b02b-60850167fd0a",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PqyYAACcAfXIG",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "jquery",
+            "first_publication_date": "2018-09-04T18:32:24+0000",
+            "last_publication_date": "2018-09-04T18:32:24+0000",
+            "link_type": "Document",
+            "key": "943f43b3-df73-4755-9cdf-e8be94901393",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47UsCYAACYAfYiC",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "drupal",
+            "first_publication_date": "2018-09-04T18:53:39+0000",
+            "last_publication_date": "2018-09-04T18:53:39+0000",
+            "link_type": "Document",
+            "key": "8da09202-86af-4434-ad2a-2d36533d501b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47UviYAACYAfYjG",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "acquia",
+            "first_publication_date": "2018-09-04T18:53:54+0000",
+            "last_publication_date": "2018-09-04T18:53:54+0000",
+            "link_type": "Document",
+            "key": "48e915cf-dac4-4a12-964c-7d4744bf61f4",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47UziYAACQAfYkU",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "cordova",
+            "first_publication_date": "2018-09-04T18:54:10+0000",
+            "last_publication_date": "2018-09-04T18:54:10+0000",
+            "link_type": "Document",
+            "key": "9421a06d-8b9b-4376-b0e7-9c830994d4e7",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "5349681d-c750-4b06-a1fc-502133677854",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 6,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "W49PoiYAACUAf6bg",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W49PoiYAACUAf6bg%22%29+%5D%5D",
+    "tags": ["peanuts-5-advice"],
+    "first_publication_date": "2018-09-05T03:38:14+0000",
+    "last_publication_date": "2019-03-02T09:01:13+0000",
+    "slugs": ["peanuts-5-advice"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Peanuts: 5¢ Advice",
+          "spans": []
+        }
+      ],
+      "abbreviation": "5ca",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Single page Ember app that allows users to get answers to their questions.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "e0bc59db-eb93-4dd3-8229-728d1c433f97",
+        "isBroken": false
+      },
+      "year": "2015",
+      "website_link": {
+        "link_type": "Web",
+        "key": "d44649df-583e-4f06-b624-fede97bac47d",
+        "url": "http://5centadvice.com/",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "id": "W47cAiYAACYAfakY",
+        "type": "client",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "fox-movies",
+        "first_publication_date": "2018-09-04T19:24:53+0000",
+        "last_publication_date": "2018-09-04T19:24:53+0000",
+        "link_type": "Document",
+        "key": "92853afd-94b8-4380-8880-6ac449f54be1",
+        "isBroken": false
+      },
+      "studio": {
+        "id": "W47a9CYAACYAfaRg",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "pxl-bros",
+        "first_publication_date": "2018-09-04T19:20:29+0000",
+        "last_publication_date": "2024-12-03T21:51:07+0000",
+        "link_type": "Document",
+        "key": "7ea67428-e01e-4de9-8845-9f1c6fad6302",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "fa820154-4860-4cb6-a343-4056f39dd5b1",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SxSYAACUAfX_r",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "component-design",
+            "first_publication_date": "2018-09-04T18:45:39+0000",
+            "last_publication_date": "2018-09-04T18:45:39+0000",
+            "link_type": "Document",
+            "key": "fe50775c-2954-40b6-b8ec-c5a24e33d33b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "77aa0b5b-f88c-4fad-ba03-7555419456f3",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "6a2ca324-9c3f-4b51-b0d5-ca288a57c821",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "65a0439a-ba7f-4321-b23c-fe0cf5bf9a14",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PjSYAACUAfXF8",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "foundation",
+            "first_publication_date": "2018-09-04T18:31:53+0000",
+            "last_publication_date": "2018-09-04T18:31:53+0000",
+            "link_type": "Document",
+            "key": "e926664e-0ad2-4e38-bbf4-fed643711ceb",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "13045818-1efb-4592-bb6b-331458f6dd6b",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47R7CYAACcAfXwZ",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ember.js",
+            "first_publication_date": "2018-09-04T18:41:54+0000",
+            "last_publication_date": "2018-09-04T18:41:54+0000",
+            "link_type": "Document",
+            "key": "e2a39030-d23e-4101-b9b9-02eef348979a",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47P2SYAACcAfXLX",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "git",
+            "first_publication_date": "2018-09-04T18:37:00+0000",
+            "last_publication_date": "2018-09-04T18:37:00+0000",
+            "link_type": "Document",
+            "key": "ca3fffd4-4daa-4b1c-82be-73b3d4c7ec40",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47Q6iYAACcAfXeM",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "gulp",
+            "first_publication_date": "2018-09-04T18:37:35+0000",
+            "last_publication_date": "2018-09-04T18:37:35+0000",
+            "link_type": "Document",
+            "key": "5bc08538-2bfe-4d8a-906c-ccfc4d0692ae",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 5,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "W49KTCYAACYAf483",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W49KTCYAACYAf483%22%29+%5D%5D",
+    "tags": ["rock-with-richie"],
+    "first_publication_date": "2018-09-05T03:15:30+0000",
+    "last_publication_date": "2019-03-06T00:59:49+0000",
+    "slugs": ["rock-with-richie"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Rock With Richie",
+          "spans": []
+        }
+      ],
+      "abbreviation": "rwr",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Single page app that allows user to take a fake selfie with Bill Murray.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "e113b14f-2663-4b8a-aa86-86c6d94c25d3",
+        "isBroken": false
+      },
+      "year": "2015",
+      "website_link": {
+        "link_type": "Web",
+        "key": "c51f6859-9d21-4fce-9b14-6dfbbffdaf5d",
+        "url": "http://rockwithrichie.com/",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "id": "W47cOSYAACcAfaoO",
+        "type": "client",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "open-road-films",
+        "first_publication_date": "2018-09-04T19:25:50+0000",
+        "last_publication_date": "2018-09-04T19:25:50+0000",
+        "link_type": "Document",
+        "key": "6e60e3fb-2b53-4685-86f7-de08734fa40d",
+        "isBroken": false
+      },
+      "studio": {
+        "id": "W47a9CYAACYAfaRg",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "pxl-bros",
+        "first_publication_date": "2018-09-04T19:20:29+0000",
+        "last_publication_date": "2024-12-03T21:51:07+0000",
+        "link_type": "Document",
+        "key": "2befe0ad-2f71-4108-8da9-1883e6ce3f72",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "eebc0ed2-b5c8-424b-bae1-09dc9d67edae",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47SxSYAACUAfX_r",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "component-design",
+            "first_publication_date": "2018-09-04T18:45:39+0000",
+            "last_publication_date": "2018-09-04T18:45:39+0000",
+            "link_type": "Document",
+            "key": "1282a3f2-6959-4af6-883f-7f5e20e93b87",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "89246ea4-c3c2-4c3b-9aff-233d3c0ea27f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "ad4e7777-2d4d-4fcf-b416-08261fc490e4",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "5f873bbc-fc9d-4d42-9b7d-7af6efec40a8",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PjSYAACUAfXF8",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "foundation",
+            "first_publication_date": "2018-09-04T18:31:53+0000",
+            "last_publication_date": "2018-09-04T18:31:53+0000",
+            "link_type": "Document",
+            "key": "d1229b43-09b8-4300-9eaf-af9399a1292d",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "46c709a0-dc57-4ba9-adf6-d0d7097ebf5f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TmSYAACQAfYOV",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "fabricjs",
+            "first_publication_date": "2018-09-04T18:49:00+0000",
+            "last_publication_date": "2018-09-04T18:49:00+0000",
+            "link_type": "Document",
+            "key": "5a921586-f2b3-4016-84b8-cc5a7ef30623",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47TOyYAACUAfYH3",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "webcamjs",
+            "first_publication_date": "2018-09-04T18:47:51+0000",
+            "last_publication_date": "2018-09-04T18:47:51+0000",
+            "link_type": "Document",
+            "key": "f91bbdf1-323f-467b-99f4-d4ee14e23677",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47Q6iYAACcAfXeM",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "gulp",
+            "first_publication_date": "2018-09-04T18:37:35+0000",
+            "last_publication_date": "2018-09-04T18:37:35+0000",
+            "link_type": "Document",
+            "key": "be7ba986-9460-4086-b0a6-1dc08374aa8a",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 4,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "W47goiYAACYAfb2I",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W47goiYAACYAfb2I%22%29+%5D%5D",
+    "tags": ["planet-panic"],
+    "first_publication_date": "2018-09-04T19:46:31+0000",
+    "last_publication_date": "2019-03-02T09:00:16+0000",
+    "slugs": ["planet-panic"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Planet Panic",
+          "spans": []
+        }
+      ],
+      "abbreviation": "pp",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Custom WP Gallery framework that uses History and Ajaxify to convert it to an SPA.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OOiYAACYAfWt_",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "web-app",
+        "first_publication_date": "2018-09-04T18:26:06+0000",
+        "last_publication_date": "2024-12-03T21:46:40+0000",
+        "link_type": "Document",
+        "key": "a183fe69-354b-467d-b293-23d79ca35db8",
+        "isBroken": false
+      },
+      "year": "2014",
+      "website_link": {
+        "link_type": "Web",
+        "key": "d30c87cf-36cf-4e4e-b963-4a8902dfebfe",
+        "url": "http://planet-panic.com",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "link_type": "Document"
+      },
+      "studio": {
+        "id": "W49LwCYAACcAf5W5",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "gene-goldstein",
+        "first_publication_date": "2018-09-05T03:21:40+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "1c253552-4252-4bf5-afa5-d4a5b590178c",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "2b74be1d-f1a2-4a69-a0ea-dba4d45b41ed",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "c60d8c3d-8dbf-4f6d-867f-fc631e1ddc78",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "080b1e85-3b5c-47ae-9992-2a1a53c35d78",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "8440d169-b242-4fea-806a-8f295e155f77",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "2bf02b06-026d-45ad-99d4-a6d06c032dd8",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "2b6bfc57-2aa1-4cb5-8f1f-633c91fa2d91",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PqyYAACcAfXIG",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "jquery",
+            "first_publication_date": "2018-09-04T18:32:24+0000",
+            "last_publication_date": "2018-09-04T18:32:24+0000",
+            "link_type": "Document",
+            "key": "c4845e36-8640-4abd-a57c-be9eb8be21e9",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YxiYAACYAfZqv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "history.js",
+            "first_publication_date": "2018-09-04T19:11:07+0000",
+            "last_publication_date": "2018-09-04T19:11:07+0000",
+            "link_type": "Document",
+            "key": "e9f280c3-9396-4b2b-a25e-66d74037117d",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YfyYAACQAfZlz",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "php",
+            "first_publication_date": "2018-09-04T19:09:55+0000",
+            "last_publication_date": "2018-09-04T19:09:55+0000",
+            "link_type": "Document",
+            "key": "0b14043c-1616-43bf-980c-14192abd3a02",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47URSYAACQAfYab",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "wordpress",
+            "first_publication_date": "2018-09-04T18:51:53+0000",
+            "last_publication_date": "2018-09-04T18:52:16+0000",
+            "link_type": "Document",
+            "key": "4c52a98e-3f19-435d-8c9e-14dcf5cc0056",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 3,
+      "gallery_count": null
+    }
+  },
+  {
+    "id": "W47aGCYAACcAfaCT",
+    "uid": null,
+    "url": null,
+    "type": "projects",
+    "href": "https://webdevdude.cdn.prismic.io/api/v2/documents/search?ref=Z74X0BAAACEArU9E&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22W47aGCYAACcAfaCT%22%29+%5D%5D",
+    "tags": ["tasty-bite"],
+    "first_publication_date": "2018-09-04T19:41:44+0000",
+    "last_publication_date": "2019-03-02T08:59:18+0000",
+    "slugs": ["tasty-bite"],
+    "linked_documents": [],
+    "lang": "en-us",
+    "alternate_languages": [],
+    "data": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Tasty Bite",
+          "spans": []
+        }
+      ],
+      "abbreviation": "tb",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Custom WP store framework with Custom posts, fields, and attributes.",
+          "spans": []
+        }
+      ],
+      "testing_this": {
+        "link_type": "Any"
+      },
+      "type": {
+        "id": "W47OTyYAACYAfWvf",
+        "type": "type",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "business",
+        "first_publication_date": "2018-09-04T18:26:27+0000",
+        "last_publication_date": "2024-12-03T21:49:08+0000",
+        "link_type": "Document",
+        "key": "2fa08b4a-f4f3-4f6f-a725-8e2ff41705d4",
+        "isBroken": false
+      },
+      "year": "2013",
+      "website_link": {
+        "link_type": "Web",
+        "key": "7c684ce5-9028-46c7-8102-268ef8c83203",
+        "url": "https://tastybite.com",
+        "target": "_blank"
+      },
+      "secondary_link": {
+        "link_type": "Any"
+      },
+      "client": {
+        "id": "W49LNCYAACUAf5NB",
+        "type": "client",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "tasty-bite",
+        "first_publication_date": "2018-09-05T03:19:23+0000",
+        "last_publication_date": "2018-09-05T03:19:23+0000",
+        "link_type": "Document",
+        "key": "55898bcd-ca88-4038-ac4d-86c50e8dc99b",
+        "isBroken": false
+      },
+      "studio": {
+        "id": "W47bayYAACUAfaZu",
+        "type": "studio",
+        "tags": [],
+        "lang": "en-us",
+        "slug": "reason-media",
+        "first_publication_date": "2018-09-04T19:22:22+0000",
+        "last_publication_date": "2024-12-03T21:51:06+0000",
+        "link_type": "Document",
+        "key": "16023232-3ee6-4e37-828f-111c417005a7",
+        "isBroken": false
+      },
+      "project_tasks": [
+        {
+          "tasks": {
+            "id": "W47GFiYAACYAfUdi",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "ui-ux-design",
+            "first_publication_date": "2018-09-04T17:51:23+0000",
+            "last_publication_date": "2018-09-04T17:51:23+0000",
+            "link_type": "Document",
+            "key": "3486b348-d25e-4f6a-8b68-3dd3d0a7a8a5",
+            "isBroken": false
+          }
+        },
+        {
+          "tasks": {
+            "id": "W47F4SYAACUAfUZy",
+            "type": "tasks",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "frontend-development",
+            "first_publication_date": "2018-09-04T17:50:53+0000",
+            "last_publication_date": "2018-09-04T17:50:53+0000",
+            "link_type": "Document",
+            "key": "83854ddc-8568-4bb5-b971-c99992554b66",
+            "isBroken": false
+          }
+        }
+      ],
+      "project_skills": [
+        {
+          "skills": {
+            "id": "W47O3SYAACUAfW5d",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "design",
+            "first_publication_date": "2018-09-04T18:28:54+0000",
+            "last_publication_date": "2018-09-04T18:28:54+0000",
+            "link_type": "Document",
+            "key": "d9a0be92-2826-45a6-82df-9a7ea2bf402f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PByYAACcAfW8b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "html",
+            "first_publication_date": "2018-09-04T18:29:34+0000",
+            "last_publication_date": "2018-09-04T18:29:34+0000",
+            "link_type": "Document",
+            "key": "3b1ff088-941f-4380-8769-df1a57903ebc",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PKCYAACUAfW-v",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "css",
+            "first_publication_date": "2018-09-04T18:30:05+0000",
+            "last_publication_date": "2018-09-04T18:30:05+0000",
+            "link_type": "Document",
+            "key": "2d5f6251-99a7-4269-83d1-4f3476e49377",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PMSYAACQAfW_b",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "sass",
+            "first_publication_date": "2018-09-04T18:30:23+0000",
+            "last_publication_date": "2018-09-04T18:30:23+0000",
+            "link_type": "Document",
+            "key": "26fa5d64-5130-4995-88d8-abaa714c5ab2",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PYSYAACYAfXC0",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "javascript",
+            "first_publication_date": "2018-09-04T18:31:01+0000",
+            "last_publication_date": "2018-09-04T18:31:17+0000",
+            "link_type": "Document",
+            "key": "5f4ed1eb-2e54-4e06-8733-8af6e0d75eb5",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47PqyYAACcAfXIG",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "jquery",
+            "first_publication_date": "2018-09-04T18:32:24+0000",
+            "last_publication_date": "2018-09-04T18:32:24+0000",
+            "link_type": "Document",
+            "key": "dc0eed38-4af4-4764-be8f-6eaf77dec6c8",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YxiYAACYAfZqv",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "history.js",
+            "first_publication_date": "2018-09-04T19:11:07+0000",
+            "last_publication_date": "2018-09-04T19:11:07+0000",
+            "link_type": "Document",
+            "key": "8ad1cc21-b879-48ef-b928-d487046ee12f",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47YfyYAACQAfZlz",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "php",
+            "first_publication_date": "2018-09-04T19:09:55+0000",
+            "last_publication_date": "2018-09-04T19:09:55+0000",
+            "link_type": "Document",
+            "key": "6f47003e-dc11-40fb-af16-7f8aac5bd107",
+            "isBroken": false
+          }
+        },
+        {
+          "skills": {
+            "id": "W47URSYAACQAfYab",
+            "type": "skills",
+            "tags": [],
+            "lang": "en-us",
+            "slug": "wordpress",
+            "first_publication_date": "2018-09-04T18:51:53+0000",
+            "last_publication_date": "2018-09-04T18:52:16+0000",
+            "link_type": "Document",
+            "key": "0af180f2-e429-4401-87a8-699c88812a1c",
+            "isBroken": false
+          }
+        }
+      ],
+      "dip_id": 1,
+      "gallery_count": null
+    }
+  }
+]
