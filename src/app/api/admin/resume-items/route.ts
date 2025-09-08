@@ -14,42 +14,58 @@ function qpBool(url: URL, key: string) {
 export async function POST(req: NextRequest) {
   const unauthorized = requireAdmin(req);
   if (unauthorized) return unauthorized;
+
   await connectToDB();
 
   const url = new URL(req.url);
   const allowNew = qpBool(url, "allowNew");
   const dryRun = qpBool(url, "dryRun");
 
-  const json = await req.json();
-
-  // Parse with your domain schema first
+  const json: unknown = await req.json();
   const parsed = ResumeItemInput.safeParse(json);
 
-  // In tests, allow a minimal payload (title required) if strict parse fails.
-  // Production behavior remains unchanged.
-  const p: any = parsed.success
-    ? parsed.data
-    : process.env.NODE_ENV === "test" && json && typeof json.title === "string" && json.title.trim()
-    ? {
-        highlights: Array.isArray(json.highlights) ? json.highlights : [],
-        skills: Array.isArray(json.skills) ? json.skills : [],
-        ...json,
-      }
-    : null;
+  // We'll normalize the body into a generic object we can spread/save.
+  let bodyObj: Record<string, unknown> | null = null;
 
-  if (!p) {
-    return NextResponse.json({ error: { message: "Invalid body" } }, { status: 400 });
+  if (parsed.success) {
+    // Strict domain-validated payload
+    bodyObj = parsed.data as unknown as Record<string, unknown>;
+  } else if (process.env.NODE_ENV === "test") {
+    // Minimal test fallback: require a title, make highlights/skills safe arrays
+    const j = json as Record<string, unknown>;
+    if (typeof j.title === "string" && j.title.trim()) {
+      const highlights = Array.isArray(j.highlights)
+        ? (j.highlights as string[])
+        : [];
+      const skills = Array.isArray(j.skills)
+        ? (j.skills as Array<{ slug?: string; name?: string; _new?: boolean }>)
+        : [];
+      bodyObj = { ...j, title: j.title, highlights, skills };
+    }
   }
 
-  const skills = await resolveManyRelations(p.skills ?? [], "skill", {
+  if (!bodyObj) {
+    return NextResponse.json(
+      { error: { message: "Invalid body" } },
+      { status: 400 }
+    );
+  }
+
+  // Safely read skills (may be absent in the minimal test body)
+  const skillsRaw = (bodyObj as { skills?: unknown }).skills;
+  const skillsIn = Array.isArray(skillsRaw)
+    ? (skillsRaw as Array<{ slug?: string; name?: string; _new?: boolean }>)
+    : [];
+
+  const skills = await resolveManyRelations(skillsIn, "skill", {
     allowNew,
     backfillSlug: true,
   });
-  const $set = { ...p, skills };
+
+  const $set: Record<string, unknown> = { ...bodyObj, skills };
 
   if (dryRun) return NextResponse.json({ dryRun: true, set: $set });
 
   const saved = await new ResumeItem($set).save();
-  const doc = saved.toObject();
-  return NextResponse.json(doc, { status: 201 });
+  return NextResponse.json(saved.toObject(), { status: 201 });
 }

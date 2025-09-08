@@ -1,4 +1,3 @@
-// src/components/ProjectGallery.tsx
 "use client";
 
 import React, { useMemo, useState, useId, useCallback } from "react";
@@ -37,11 +36,9 @@ export default function ProjectGallery({
 
   if (!hero) return null;
 
-  // TS-safe inline style for the experimental CSS property
-  const vtStyle = viewTransitionName
-    ? ({
-        ["viewTransitionName" as any]: viewTransitionName,
-      } as React.CSSProperties)
+  // With react-css.d.ts in place, we can type this cleanly
+  const vtStyle: React.CSSProperties | undefined = viewTransitionName
+    ? { viewTransitionName }
     : undefined;
 
   return (

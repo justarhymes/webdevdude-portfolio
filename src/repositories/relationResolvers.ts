@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 import { Skill } from "@/models/Skill";
 import { Task } from "@/models/Task";
 import { Type } from "@/models/Type";
@@ -16,19 +16,23 @@ const modelMap = {
 } as const;
 
 export type RelInput = {
-  _id?: any;
+  _id?: Types.ObjectId | string;
   slug?: string;
   name?: string;
   _new?: boolean;
 };
+
 export type LeanRel = { slug: string; name?: string };
+
 export type ResolveOpts = {
   session?: mongoose.ClientSession | null;
   allowNew?: boolean;
   backfillSlug?: boolean;
 };
 
-async function findByAny<T extends { _id?: any; slug?: string; name?: string }>(
+type BaseRelLean = { _id?: Types.ObjectId; slug?: string; name?: string };
+
+async function findByAny<T extends BaseRelLean>(
   kind: Kind,
   inp: RelInput,
   session?: mongoose.ClientSession | null
@@ -64,39 +68,41 @@ export async function resolveOneRelation(
   const session = opts.session ?? null;
   const M = modelMap[kind];
 
-  const found = await findByAny<{ _id?: any; slug?: string; name?: string }>(
-    kind,
-    input,
-    session
-  );
+  const found = await findByAny<BaseRelLean>(kind, input, session);
   if (found) {
     // Backfill slug if needed
     if (!found.slug && (found.name || input.name)) {
       const s = slugify(found.name ?? input.name!);
       if (opts.backfillSlug) {
-        await M.updateOne(
-          { _id: (found as any)._id },
-          { $set: { slug: s } },
-          { session: session ?? undefined }
-        );
+        const id = found._id;
+        if (id) {
+          await M.updateOne(
+            { _id: id },
+            { $set: { slug: s } },
+            { session: session ?? undefined }
+          );
+        }
       }
       return { slug: s, name: found.name ?? input.name };
     }
-    return { slug: found.slug as string, name: found.name ?? input.name };
+    return {
+      slug: found.slug ?? slugify(found.name ?? input.name!),
+      name: found.name ?? input.name,
+    };
   }
 
   // create only if explicitly allowed
   if (opts.allowNew && input._new) {
     const name = input.name ?? input.slug ?? "Untitled";
     const slug = input.slug ?? slugify(name);
-    const created = await new M({ name, slug }).save({
+    const createdDoc = await new M({ name, slug }).save({
       session: session ?? undefined,
     });
-    return { slug: (created.toObject() as any).slug as string, name };
+    const createdObj = createdDoc.toObject() as { slug: string; name?: string };
+    return { slug: createdObj.slug, name: createdObj.name ?? name };
   }
 
   // Treat unknown relations as missing so callers/tests can decide what to do.
-  // (Project repo already collects unresolved slugs and errors accordingly.)
   return null;
 }
 

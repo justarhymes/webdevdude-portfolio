@@ -13,9 +13,18 @@ export type CreateOpts = {
   upsert?: boolean;
   allowNew?: boolean;
 };
+
 type RepoError = { message: string; issues?: ReadonlyArray<PublicIssue> };
 type PlainObject = Record<string, unknown>;
 type LeanRel = { slug: string; name?: string };
+
+type PartialRelationsInput = {
+  skills?: Array<{ slug?: string; name?: string }>;
+  tasks?: Array<{ slug?: string; name?: string }>;
+  type?: { slug?: string; name?: string } | null;
+  client?: { slug?: string; name?: string } | null;
+  studio?: { slug?: string; name?: string } | null;
+};
 
 export async function createProject(
   payload: ProjectInput,
@@ -38,27 +47,18 @@ export async function createProject(
       };
     }
 
-    // ⚠️ We may not have tasks on ProjectInput yet; use a lenient view
-    const payloadAny = payload as unknown as {
-      skills?: Array<{ slug?: string; name?: string }>;
-      tasks?: Array<{ slug?: string; name?: string }>;
-      type?: { slug?: string; name?: string } | null;
-      client?: { slug?: string; name?: string } | null;
-      studio?: { slug?: string; name?: string } | null;
-      media?: unknown[];
-      [k: string]: unknown;
-    };
+    const payloadRel = payload as unknown as PartialRelationsInput;
 
     if (opts.dryRun) {
       const plan = {
         action: existing ? "update" : "create",
         slug: payload.slug,
         set: {
-          skills: await resolveManyRelations(payloadAny.skills, "skill"),
-          tasks: await resolveManyRelations(payloadAny.tasks, "task"),
-          type: await resolveOneRelation(payloadAny.type, "type"),
-          client: await resolveOneRelation(payloadAny.client, "client"),
-          studio: await resolveOneRelation(payloadAny.studio, "studio"),
+          skills: await resolveManyRelations(payloadRel.skills, "skill"),
+          tasks: await resolveManyRelations(payloadRel.tasks, "task"),
+          type: await resolveOneRelation(payloadRel.type, "type"),
+          client: await resolveOneRelation(payloadRel.client, "client"),
+          studio: await resolveOneRelation(payloadRel.studio, "studio"),
         },
       };
       return { ok: true, data: { slug: payload.slug }, summary: plan };
@@ -70,40 +70,40 @@ export async function createProject(
       const relOpts = { session, allowNew: opts.allowNew };
 
       const skills = await resolveManyRelations(
-        payloadAny.skills,
+        payloadRel.skills,
         "skill",
         relOpts
       );
       const tasks = await resolveManyRelations(
-        payloadAny.tasks,
+        payloadRel.tasks,
         "task",
         relOpts
       );
-      const type = await resolveOneRelation(payloadAny.type, "type", relOpts);
+      const type = await resolveOneRelation(payloadRel.type, "type", relOpts);
       const client = await resolveOneRelation(
-        payloadAny.client,
+        payloadRel.client,
         "client",
         relOpts
       );
       const studio = await resolveOneRelation(
-        payloadAny.studio,
+        payloadRel.studio,
         "studio",
         relOpts
       );
 
       const unresolved: string[] = [];
-      if (payloadAny.type && !type)
-        unresolved.push(`type.slug="${payloadAny.type.slug}"`);
-      if (payloadAny.client && !client)
-        unresolved.push(`client.slug="${payloadAny.client.slug}"`);
-      if (payloadAny.studio && !studio)
-        unresolved.push(`studio.slug="${payloadAny.studio.slug}"`);
+      if (payloadRel.type && !type)
+        unresolved.push(`type.slug="${payloadRel.type.slug}"`);
+      if (payloadRel.client && !client)
+        unresolved.push(`client.slug="${payloadRel.client.slug}"`);
+      if (payloadRel.studio && !studio)
+        unresolved.push(`studio.slug="${payloadRel.studio.slug}"`);
 
-      for (const rel of payloadAny.skills ?? []) {
+      for (const rel of payloadRel.skills ?? []) {
         if (!skills.find((s) => s.slug === rel?.slug))
           unresolved.push(`skills.slug="${rel?.slug}"`);
       }
-      for (const rel of payloadAny.tasks ?? []) {
+      for (const rel of payloadRel.tasks ?? []) {
         if (!tasks.find((t) => t.slug === rel?.slug))
           unresolved.push(`tasks.slug="${rel?.slug}"`);
       }
@@ -112,14 +112,14 @@ export async function createProject(
         throw new Error(`Unresolved relations: ${unresolved.join(", ")}`);
 
       const data: PlainObject = {
-        title: (payload as any).title,
+        title: payload.title,
         slug: payload.slug,
-        summary: (payload as any).summary,
-        description: (payload as any).description,
-        url: (payload as any).url,
-        repoUrl: (payload as any).repoUrl,
-        thumb: (payload as any).thumb,
-        media: (payload as any).media ?? [],
+        summary: (payload as Record<string, unknown>).summary,
+        description: (payload as Record<string, unknown>).description,
+        url: (payload as Record<string, unknown>).url,
+        repoUrl: (payload as Record<string, unknown>).repoUrl,
+        thumb: (payload as Record<string, unknown>).thumb,
+        media: (payload as Record<string, unknown>).media ?? [],
         // relations
         skills,
         tasks,
@@ -127,9 +127,9 @@ export async function createProject(
         client,
         studio,
         // flags / ordering
-        published: (payload as any).published ?? false,
-        featured: (payload as any).featured ?? false,
-        order: (payload as any).order,
+        published: (payload as Record<string, unknown>).published ?? false,
+        featured: (payload as Record<string, unknown>).featured ?? false,
+        order: (payload as Record<string, unknown>).order,
       };
 
       if (existing) {
@@ -167,43 +167,20 @@ export async function updateProjectBySlug(
     if (!existing)
       return { ok: false, error: { message: `Project "${slug}" not found` } };
 
-    // Lenient access to tasks (and any future relations) without changing ProjectUpdate type yet
-    const patchAny = patch as unknown as {
-      skills?: Array<{ slug?: string; name?: string }>;
-      tasks?: Array<{ slug?: string; name?: string }>;
-      type?: { slug?: string; name?: string } | null;
-      client?: { slug?: string; name?: string } | null;
-      studio?: { slug?: string; name?: string } | null;
-      [k: string]: unknown;
-    };
+    const patchRel = patch as unknown as PartialRelationsInput;
 
     if (opts.dryRun) {
-      const plan: Record<string, unknown> = { action: "update", slug, set: {} };
-      if (patchAny.skills !== undefined)
-        (plan.set as any).skills = await resolveManyRelations(
-          patchAny.skills,
-          "skill"
-        );
-      if (patchAny.tasks !== undefined)
-        (plan.set as any).tasks = await resolveManyRelations(
-          patchAny.tasks,
-          "task"
-        );
-      if (patchAny.type !== undefined)
-        (plan.set as any).type = await resolveOneRelation(
-          patchAny.type,
-          "type"
-        );
-      if (patchAny.client !== undefined)
-        (plan.set as any).client = await resolveOneRelation(
-          patchAny.client,
-          "client"
-        );
-      if (patchAny.studio !== undefined)
-        (plan.set as any).studio = await resolveOneRelation(
-          patchAny.studio,
-          "studio"
-        );
+      const set: Record<string, unknown> = {};
+      if (patchRel.skills !== undefined)
+        set.skills = await resolveManyRelations(patchRel.skills, "skill");
+      if (patchRel.tasks !== undefined)
+        set.tasks = await resolveManyRelations(patchRel.tasks, "task");
+      if (patchRel.type !== undefined)
+        set.type = await resolveOneRelation(patchRel.type, "type");
+      if (patchRel.client !== undefined)
+        set.client = await resolveOneRelation(patchRel.client, "client");
+      if (patchRel.studio !== undefined)
+        set.studio = await resolveOneRelation(patchRel.studio, "studio");
 
       for (const k of [
         "title",
@@ -218,22 +195,21 @@ export async function updateProjectBySlug(
         "order",
       ] as const) {
         if ((patch as Record<string, unknown>)[k] !== undefined) {
-          (plan.set as Record<string, unknown>)[k] = (
-            patch as Record<string, unknown>
-          )[k];
+          set[k] = (patch as Record<string, unknown>)[k];
         }
       }
+
+      const plan = { action: "update", slug, set };
       return { ok: true, data: plan as unknown as PlainObject };
     }
 
     let updated: PlainObject | null = null;
 
     await withOptionalTransaction(async (session) => {
-      const set: PlainObject = {};
+      const set: Record<string, unknown> = {};
       const put = (k: keyof ProjectUpdate) => {
         const v = (patch as Record<string, unknown>)[k as string];
-        if (v !== undefined)
-          (set as Record<string, unknown>)[k as string] = v as unknown;
+        if (v !== undefined) set[k as string] = v;
       };
 
       put("title");
@@ -250,57 +226,59 @@ export async function updateProjectBySlug(
       const relOpts = { session, allowNew: opts.allowNew };
       const unresolved: string[] = [];
 
-      if (patchAny.skills !== undefined) {
+      if (patchRel.skills !== undefined) {
         const skills = await resolveManyRelations(
-          patchAny.skills,
+          patchRel.skills,
           "skill",
           relOpts
         );
-        for (const rel of patchAny.skills ?? []) {
+        for (const rel of patchRel.skills ?? []) {
           if (!skills.find((s: LeanRel) => s.slug === rel?.slug))
             unresolved.push(`skills.slug="${rel?.slug}"`);
         }
-        (set as any).skills = skills;
+        set.skills = skills;
       }
 
-      if (patchAny.tasks !== undefined) {
+      if (patchRel.tasks !== undefined) {
         const tasks = await resolveManyRelations(
-          patchAny.tasks,
+          patchRel.tasks,
           "task",
           relOpts
         );
-        for (const rel of patchAny.tasks ?? []) {
+        for (const rel of patchRel.tasks ?? []) {
           if (!tasks.find((t: LeanRel) => t.slug === rel?.slug))
             unresolved.push(`tasks.slug="${rel?.slug}"`);
         }
-        (set as any).tasks = tasks;
+        set.tasks = tasks;
       }
 
-      if (patchAny.type !== undefined) {
-        const type = await resolveOneRelation(patchAny.type, "type", relOpts);
-        if (patchAny.type && !type)
-          unresolved.push(`type.slug="${patchAny.type.slug}"`);
-        (set as any).type = type;
+      if (patchRel.type !== undefined) {
+        const type = await resolveOneRelation(patchRel.type, "type", relOpts);
+        if (patchRel.type && !type)
+          unresolved.push(`type.slug="${patchRel.type.slug}"`);
+        set.type = type;
       }
-      if (patchAny.client !== undefined) {
+
+      if (patchRel.client !== undefined) {
         const client = await resolveOneRelation(
-          patchAny.client,
+          patchRel.client,
           "client",
           relOpts
         );
-        if (patchAny.client && !client)
-          unresolved.push(`client.slug="${patchAny.client.slug}"`);
-        (set as any).client = client;
+        if (patchRel.client && !client)
+          unresolved.push(`client.slug="${patchRel.client.slug}"`);
+        set.client = client;
       }
-      if (patchAny.studio !== undefined) {
+
+      if (patchRel.studio !== undefined) {
         const studio = await resolveOneRelation(
-          patchAny.studio,
+          patchRel.studio,
           "studio",
           relOpts
         );
-        if (patchAny.studio && !studio)
-          unresolved.push(`studio.slug="${patchAny.studio.slug}"`);
-        (set as any).studio = studio;
+        if (patchRel.studio && !studio)
+          unresolved.push(`studio.slug="${patchRel.studio.slug}"`);
+        set.studio = studio;
       }
 
       if (unresolved.length)

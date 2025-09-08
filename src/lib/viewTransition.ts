@@ -11,9 +11,8 @@ export function vtNames(slug: string) {
 }
 
 /**
- * Optional helper: TS-safe style object for the `viewTransitionName` CSS property.
- * Use only if your TS config complains about the property on `style={}`.
+ * TS-safe style object for the `viewTransitionName` CSS property.
  */
-export function vtStyle(name?: string) {
-  return name ? ({ ["viewTransitionName" as any]: name } as React.CSSProperties) : undefined;
+export function vtStyle(name?: string): React.CSSProperties | undefined {
+  return name ? { viewTransitionName: name } : undefined;
 }

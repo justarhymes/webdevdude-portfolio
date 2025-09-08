@@ -1,4 +1,3 @@
-//projects
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { connectToDB } from "@/lib/db";
@@ -8,6 +7,7 @@ import { zInt, zPosInt, zLimit } from "@/lib/zodHelpers";
 import {
   resolveManyRelations,
   resolveOneRelation,
+  type RelInput,
 } from "@/repositories/relationResolvers";
 import type { ProjectDTO } from "@/domain/project";
 
@@ -28,6 +28,19 @@ type ProjectFilter = Partial<{
   "type.slug": string;
   $or: Array<Record<string, { $regex: string; $options: "i" }>>;
 }>;
+
+// ⬇️ DB/lean shape where relations may be partial/unresolved
+type RawRel = { slug?: string; name?: string } | null | undefined;
+type RawProject = Omit<
+  ProjectDTO,
+  "skills" | "tasks" | "type" | "client" | "studio"
+> & {
+  skills?: RawRel[] | null;
+  tasks?: RawRel[] | null;
+  type?: RawRel;
+  client?: RawRel;
+  studio?: RawRel;
+};
 
 export async function GET(req: Request) {
   const parsed = parseQuery(QuerySchema, req.url);
@@ -55,18 +68,24 @@ export async function GET(req: Request) {
       .sort({ order: 1, createdAt: -1 })
       .skip(skip)
       .limit(limit)
-      .lean<ProjectDTO[]>(),
+      .lean<RawProject[]>(), // ⬅️ use RawProject
     Project.countDocuments(filter),
   ]);
 
   const items = await Promise.all(
     rawItems.map(async (doc) => {
       const [skills, tasks, typeRel, clientRel, studioRel] = await Promise.all([
-        resolveManyRelations((doc as any).skills, "skill"),
-        resolveManyRelations((doc as any).tasks, "task"),
-        resolveOneRelation((doc as any).type, "type"),
-        resolveOneRelation((doc as any).client, "client"),
-        resolveOneRelation((doc as any).studio, "studio"),
+        resolveManyRelations(
+          doc.skills as Array<RelInput | null | undefined> | undefined,
+          "skill"
+        ),
+        resolveManyRelations(
+          doc.tasks as Array<RelInput | null | undefined> | undefined,
+          "task"
+        ),
+        resolveOneRelation(doc.type as RelInput | undefined, "type"),
+        resolveOneRelation(doc.client as RelInput | undefined, "client"),
+        resolveOneRelation(doc.studio as RelInput | undefined, "studio"),
       ]);
 
       return {

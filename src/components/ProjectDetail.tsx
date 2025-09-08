@@ -6,20 +6,34 @@ import Tag from "./Tag";
 import { cleanLinkText, normalizeMediaPath } from "@/lib/url";
 import { vtNames } from "@/lib/viewTransition";
 
-function normalizeImages(media?: any[]): MediaItem[] {
-  return Array.isArray(media)
-    ? (media
-        .map((m: any) => {
-          if (!m) return null;
-          if (typeof m === "string") {
-            const url = normalizeMediaPath(m);
-            return url ? ({ url } as MediaItem) : null;
-          }
-          const url = normalizeMediaPath(m.url);
-          return url ? ({ ...m, url } as MediaItem) : null;
-        })
-        .filter(Boolean) as MediaItem[])
-    : [];
+// Accept the shapes you actually pass around (string | MediaItem | nullish)
+function normalizeImages(
+  media?: Array<MediaItem | string | null | undefined>
+): MediaItem[] {
+  if (!Array.isArray(media)) return [];
+  const normalized = media
+    .map((m) => {
+      if (!m) return null;
+      if (typeof m === "string") {
+        const url = normalizeMediaPath(m);
+        return url ? ({ url } as MediaItem) : null;
+      }
+      // m is (partial) MediaItem
+      const maybe = m as Partial<MediaItem>;
+      const url = normalizeMediaPath(maybe.url);
+      return url ? ({ ...maybe, url } as MediaItem) : null;
+    })
+    .filter(Boolean) as MediaItem[];
+  return normalized;
+}
+
+// Narrow a tag-like thing to { slug?: string; name?: string }
+function isSlugRef(v: unknown): v is { slug?: string; name?: string } {
+  return (
+    !!v &&
+    typeof v === "object" &&
+    ("slug" in (v as object) || "name" in (v as object))
+  );
 }
 
 export default function ProjectDetail({ project }: { project: Project }) {
@@ -73,17 +87,15 @@ export default function ProjectDetail({ project }: { project: Project }) {
           {/* Skills chips */}
           {skills?.length ? (
             <TagList title='Skills'>
-              {(skills as any[])
-                .filter((s) => s && (s.slug || s.name))
-                .map((s) => (
-                  <Tag key={`tag-${s.slug}`}>{s.name ?? s.slug}</Tag>
-                ))}
+              {(skills ?? []).filter(isSlugRef).map((s) => (
+                <Tag key={`tag-${s.slug ?? s.name}`}>{s.name ?? s.slug}</Tag>
+              ))}
             </TagList>
           ) : null}
 
           {(primaryLink || secondaryLink) && (
             <div className='mt-4'>
-              Vist{" "}
+              Visit{" "}
               {primaryLink ? (
                 <a
                   href={primaryLink}
@@ -118,11 +130,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
       <section>
         {tasks?.length ? (
           <TagList title='Tasks'>
-            {(tasks as any[])
-              .filter((t) => t && (t.slug || t.name))
-              .map((t) => (
-                <Tag key={`tag-${t.slug}`}>{t.name ?? t.slug}</Tag>
-              ))}
+            {(tasks ?? []).filter(isSlugRef).map((t) => (
+              <Tag key={`tag-${t.slug ?? t.name}`}>{t.name ?? t.slug}</Tag>
+            ))}
           </TagList>
         ) : null}
 

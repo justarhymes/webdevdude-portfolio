@@ -3,7 +3,7 @@ import React from "react";
 type CommentHeaderProps = {
   as?: React.ElementType;
   children: React.ReactNode;
-  className?: String;
+  className?: string;
 };
 
 export default function CommentHeader({
