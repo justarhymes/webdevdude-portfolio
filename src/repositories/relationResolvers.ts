@@ -95,9 +95,9 @@ export async function resolveOneRelation(
     return { slug: (created.toObject() as any).slug as string, name };
   }
 
-  // return at least a slug if one was provided
-  if (input.slug) return { slug: input.slug, name: input.name };
-  return null; // completely empty objects become null
+  // Treat unknown relations as missing so callers/tests can decide what to do.
+  // (Project repo already collects unresolved slugs and errors accordingly.)
+  return null;
 }
 
 export async function resolveManyRelations(
