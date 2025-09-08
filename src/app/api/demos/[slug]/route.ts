@@ -1,16 +1,26 @@
-import { NextResponse } from "next/server";
+// api demo [slug] route
+import { NextRequest, NextResponse } from "next/server";
 import { connectToDB } from "@/lib/db";
+import { requireAdmin } from "@/lib/requireAdmin";
 import { Demo } from "@/models/Demo";
-import type { DemoDTO } from "@/domain/demo";
 
-type RouteParams = { params: Promise<{ slug: string }> };
+type Ctx = { params: Promise<{ slug: string }> };
 
-export async function GET(_req: Request, { params }: RouteParams) {
-  const { slug } = await params;
+export async function DELETE(req: NextRequest, ctx: Ctx) {
+  const { slug } = await ctx.params;
+
+  const unauthorized = requireAdmin(req);
+  if (unauthorized) return unauthorized;
 
   await connectToDB();
-  const doc = await Demo.findOne({ slug }).lean<DemoDTO | null>();
-  if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  return NextResponse.json(doc);
+  const res = await Demo.deleteOne({ slug });
+  if (!res.deletedCount) {
+    return NextResponse.json(
+      { error: `Demo "${slug}" not found` },
+      { status: 404 }
+    );
+  }
+
+  return NextResponse.json({ ok: true, deletedCount: res.deletedCount ?? 0 });
 }
