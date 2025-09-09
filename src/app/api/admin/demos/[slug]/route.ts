@@ -4,13 +4,18 @@ import { z } from "zod";
 import { connectToDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/requireAdmin";
 import { Demo } from "@/models/Demo";
-import { resolveManyRelations, resolveOneRelation } from "@/repositories/relationResolvers";
+import {
+  resolveManyRelations,
+  resolveOneRelation,
+} from "@/repositories/relationResolvers";
 
-const Rel = z.object({
-  slug: z.string().optional(),
-  name: z.string().optional(),
-  _new: z.boolean().optional(),
-}).refine(v => v.slug || v.name, { message: "slug or name required" });
+const Rel = z
+  .object({
+    slug: z.string().optional(),
+    name: z.string().optional(),
+    _new: z.boolean().optional(),
+  })
+  .refine((v) => v.slug || v.name, { message: "slug or name required" });
 
 const Patch = z.object({
   title: z.string().min(1).optional(),
@@ -34,10 +39,15 @@ function qpBool(url: URL, key: string) {
   return v === "1" || v?.toLowerCase() === "true";
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { slug: string } }) {
+export async function PATCH(
+  req: NextRequest,
+  ctx: { params: Promise<{ slug: string }> } // Next 15: params is a Promise
+) {
   const unauthorized = requireAdmin(req);
   if (unauthorized) return unauthorized;
   await connectToDB();
+
+  const { slug } = await ctx.params;
 
   const url = new URL(req.url);
   const allowNew = qpBool(url, "allowNew");
@@ -46,29 +56,61 @@ export async function PATCH(req: NextRequest, { params }: { params: { slug: stri
   const json = await req.json();
   const parsed = Patch.safeParse(json);
   if (!parsed.success) {
-    return NextResponse.json({ error: { message: "Invalid body" } }, { status: 400 });
+    return NextResponse.json(
+      { error: { message: "Invalid body" } },
+      { status: 400 }
+    );
   }
 
   const p = parsed.data;
   const $set: Record<string, unknown> = { ...p };
 
-  if (p.skills) $set.skills = await resolveManyRelations(p.skills, "skill", { allowNew, backfillSlug: true });
-  if (p.type)   $set.type   = await resolveOneRelation(p.type, "type", { allowNew, backfillSlug: true });
-  if (p.client) $set.client = await resolveOneRelation(p.client, "client", { allowNew, backfillSlug: true });
-  if (p.studio) $set.studio = await resolveOneRelation(p.studio, "studio", { allowNew, backfillSlug: true });
+  if (p.skills)
+    $set.skills = await resolveManyRelations(p.skills, "skill", {
+      allowNew,
+      backfillSlug: true,
+    });
+  if (p.type)
+    $set.type = await resolveOneRelation(p.type, "type", {
+      allowNew,
+      backfillSlug: true,
+    });
+  if (p.client)
+    $set.client = await resolveOneRelation(p.client, "client", {
+      allowNew,
+      backfillSlug: true,
+    });
+  if (p.studio)
+    $set.studio = await resolveOneRelation(p.studio, "studio", {
+      allowNew,
+      backfillSlug: true,
+    });
 
   if (dryRun) return NextResponse.json({ dryRun: true, set: $set });
 
-  const doc = await Demo.findOneAndUpdate({ slug: params.slug }, { $set }, { new: true }).lean();
-  if (!doc) return NextResponse.json({ error: { message: "Not found" } }, { status: 404 });
+  const doc = await Demo.findOneAndUpdate(
+    { slug },
+    { $set },
+    { new: true }
+  ).lean();
+  if (!doc)
+    return NextResponse.json(
+      { error: { message: "Not found" } },
+      { status: 404 }
+    );
   return NextResponse.json(doc);
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { slug: string } }) {
+export async function DELETE(
+  req: NextRequest,
+  ctx: { params: Promise<{ slug: string }> } // Next 15: params is a Promise
+) {
   const unauthorized = requireAdmin(req);
   if (unauthorized) return unauthorized;
   await connectToDB();
 
-  const res = await Demo.deleteOne({ slug: params.slug });
+  const { slug } = await ctx.params;
+
+  const res = await Demo.deleteOne({ slug });
   return NextResponse.json({ ok: res.deletedCount === 1 });
 }
