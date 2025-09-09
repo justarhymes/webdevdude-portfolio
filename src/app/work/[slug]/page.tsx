@@ -9,7 +9,7 @@ import { getBaseUrl } from "@/lib/requestBase";
 
 export const revalidate = 60;
 
-type PageParams = { params: { slug: string } };
+type PageParams = { params: Promise<{ slug: string }> };
 
 async function fetchProject(slug: string): Promise<Project | null> {
   const base = await getBaseUrl();
@@ -53,7 +53,7 @@ function pickDescription(p: unknown): string | undefined {
 export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const item = await fetchProject(slug);
   if (!item) return { title: "Project not found • Work" };
 
@@ -82,7 +82,7 @@ export async function generateMetadata({
 }
 
 export default async function WorkDetailPage({ params }: PageParams) {
-  const { slug } = params;
+  const { slug } = await params;
   const item = await fetchProject(slug);
   if (!item) notFound();
   return <ProjectDetail project={item} />;
