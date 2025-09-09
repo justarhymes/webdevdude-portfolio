@@ -8,7 +8,11 @@ import {
 import type { PublicIssue } from "@/lib/parse";
 import { withOptionalTransaction } from "@/lib/tx";
 
-export type CreateOpts = { dryRun?: boolean; upsert?: boolean; allowNew?: boolean };
+export type CreateOpts = {
+  dryRun?: boolean;
+  upsert?: boolean;
+  allowNew?: boolean;
+};
 type RepoError = { message: string; issues?: ReadonlyArray<PublicIssue> };
 
 type LeanRel = { slug: string; name?: string };
@@ -18,9 +22,9 @@ type DryRunPlan = {
   slug: string;
   set: {
     skills?: LeanRel[];
-    type?: LeanRel;
-    client?: LeanRel;
-    studio?: LeanRel;
+    type?: LeanRel | null;
+    client?: LeanRel | null;
+    studio?: LeanRel | null;
     [k: string]: unknown;
   };
 };
@@ -28,13 +32,20 @@ type DryRunPlan = {
 export async function createDemo(
   payload: DemoInput,
   opts: CreateOpts = {}
-): Promise<{ ok: true; data: PlainObject; summary?: DryRunPlan } | { ok: false; error: RepoError }> {
+): Promise<
+  | { ok: true; data: PlainObject; summary?: DryRunPlan }
+  | { ok: false; error: RepoError }
+> {
   try {
-    const existing = await Demo.findOne({ slug: payload.slug })
-      .lean<{ _id: mongoose.Types.ObjectId }>();
+    const existing = await Demo.findOne({ slug: payload.slug }).lean<{
+      _id: mongoose.Types.ObjectId;
+    }>();
 
     if (existing && !opts.upsert) {
-      return { ok: false, error: { message: `Demo with slug "${payload.slug}" already exists` } };
+      return {
+        ok: false,
+        error: { message: `Demo with slug "${payload.slug}" already exists` },
+      };
     }
 
     if (opts.dryRun) {
@@ -55,17 +66,33 @@ export async function createDemo(
 
     await withOptionalTransaction(async (session) => {
       const relOpts = { session, allowNew: opts.allowNew };
-      const skills = await resolveManyRelations(payload.skills, "skill", relOpts);
+      const skills = await resolveManyRelations(
+        payload.skills,
+        "skill",
+        relOpts
+      );
       const type = await resolveOneRelation(payload.type, "type", relOpts);
-      const client = await resolveOneRelation(payload.client, "client", relOpts);
-      const studio = await resolveOneRelation(payload.studio, "studio", relOpts);
+      const client = await resolveOneRelation(
+        payload.client,
+        "client",
+        relOpts
+      );
+      const studio = await resolveOneRelation(
+        payload.studio,
+        "studio",
+        relOpts
+      );
 
       const unresolved: string[] = [];
-      if (payload.type && !type) unresolved.push(`type.slug="${payload.type.slug}"`);
-      if (payload.client && !client) unresolved.push(`client.slug="${payload.client.slug}"`);
-      if (payload.studio && !studio) unresolved.push(`studio.slug="${payload.studio.slug}"`);
+      if (payload.type && !type)
+        unresolved.push(`type.slug="${payload.type.slug}"`);
+      if (payload.client && !client)
+        unresolved.push(`client.slug="${payload.client.slug}"`);
+      if (payload.studio && !studio)
+        unresolved.push(`studio.slug="${payload.studio.slug}"`);
       for (const rel of payload.skills ?? []) {
-        if (!skills.find((s) => s.slug === rel.slug)) unresolved.push(`skills.slug="${rel.slug}"`);
+        if (!skills.find((s) => s.slug === rel.slug))
+          unresolved.push(`skills.slug="${rel.slug}"`);
       }
       if (unresolved.length) {
         throw new Error(
@@ -94,11 +121,17 @@ export async function createDemo(
       };
 
       if (existing) {
-        await Demo.updateOne({ _id: existing._id }, data, { session: session ?? undefined });
-        const found = await Demo.findById(existing._id).session(session ?? null).lean<PlainObject | null>();
+        await Demo.updateOne({ _id: existing._id }, data, {
+          session: session ?? undefined,
+        });
+        const found = await Demo.findById(existing._id)
+          .session(session ?? null)
+          .lean<PlainObject | null>();
         createdOrUpdated = found ?? {};
       } else {
-        const saved = await new Demo(data).save({ session: session ?? undefined });
+        const saved = await new Demo(data).save({
+          session: session ?? undefined,
+        });
         createdOrUpdated = saved.toObject() as PlainObject;
       }
     });
@@ -116,20 +149,38 @@ export async function updateDemoBySlug(
   opts: CreateOpts = {}
 ): Promise<{ ok: true; data: PlainObject } | { ok: false; error: RepoError }> {
   try {
-    const existing = await Demo.findOne({ slug }).lean<{ _id: mongoose.Types.ObjectId }>();
-    if (!existing) return { ok: false, error: { message: `Demo "${slug}" not found` } };
+    const existing = await Demo.findOne({ slug }).lean<{
+      _id: mongoose.Types.ObjectId;
+    }>();
+    if (!existing)
+      return { ok: false, error: { message: `Demo "${slug}" not found` } };
 
     if (opts.dryRun) {
       const plan: DryRunPlan = { action: "update", slug, set: {} };
-      if (patch.skills !== undefined) plan.set.skills = await resolveManyRelations(patch.skills, "skill");
-      if (patch.type !== undefined) plan.set.type = await resolveOneRelation(patch.type, "type");
-      if (patch.client !== undefined) plan.set.client = await resolveOneRelation(patch.client, "client");
-      if (patch.studio !== undefined) plan.set.studio = await resolveOneRelation(patch.studio, "studio");
+      if (patch.skills !== undefined)
+        plan.set.skills = await resolveManyRelations(patch.skills, "skill");
+      if (patch.type !== undefined)
+        plan.set.type = await resolveOneRelation(patch.type, "type");
+      if (patch.client !== undefined)
+        plan.set.client = await resolveOneRelation(patch.client, "client");
+      if (patch.studio !== undefined)
+        plan.set.studio = await resolveOneRelation(patch.studio, "studio");
       for (const k of [
-        "title","summary","description","url","repoUrl","thumb","media","published","featured","order",
+        "title",
+        "summary",
+        "description",
+        "url",
+        "repoUrl",
+        "thumb",
+        "media",
+        "published",
+        "featured",
+        "order",
       ] as const) {
         if ((patch as Record<string, unknown>)[k] !== undefined) {
-          (plan.set as Record<string, unknown>)[k] = (patch as Record<string, unknown>)[k];
+          (plan.set as Record<string, unknown>)[k] = (
+            patch as Record<string, unknown>
+          )[k];
         }
       }
       return { ok: true, data: plan as unknown as PlainObject };
@@ -142,47 +193,77 @@ export async function updateDemoBySlug(
 
       const assign = <K extends keyof DemoUpdate>(k: K) => {
         const v = patch[k];
-        if (v !== undefined) (set as Record<string, unknown>)[k as string] = v as unknown;
+        if (v !== undefined)
+          (set as Record<string, unknown>)[k as string] = v as unknown;
       };
 
-      assign("title"); assign("summary"); assign("description");
-      assign("url"); assign("repoUrl"); assign("thumb"); assign("media");
-      assign("published"); assign("featured"); assign("order");
+      assign("title");
+      assign("summary");
+      assign("description");
+      assign("url");
+      assign("repoUrl");
+      assign("thumb");
+      assign("media");
+      assign("published");
+      assign("featured");
+      assign("order");
 
       const relOpts = { session, allowNew: opts.allowNew };
       const unresolved: string[] = [];
 
       if (patch.skills !== undefined) {
-        const skills = await resolveManyRelations(patch.skills, "skill", relOpts);
+        const skills = await resolveManyRelations(
+          patch.skills,
+          "skill",
+          relOpts
+        );
         for (const rel of patch.skills ?? []) {
-          if (!skills.find((s) => s.slug === rel.slug)) unresolved.push(`skills.slug="${rel.slug}"`);
+          if (!skills.find((s) => s.slug === rel.slug))
+            unresolved.push(`skills.slug="${rel.slug}"`);
         }
         (set as Record<string, unknown>).skills = skills;
       }
       if (patch.type !== undefined) {
         const type = await resolveOneRelation(patch.type, "type", relOpts);
-        if (patch.type && !type) unresolved.push(`type.slug="${patch.type.slug}"`);
+        if (patch.type && !type)
+          unresolved.push(`type.slug="${patch.type.slug}"`);
         (set as Record<string, unknown>).type = type;
       }
       if (patch.client !== undefined) {
-        const client = await resolveOneRelation(patch.client, "client", relOpts);
-        if (patch.client && !client) unresolved.push(`client.slug="${patch.client.slug}"`);
+        const client = await resolveOneRelation(
+          patch.client,
+          "client",
+          relOpts
+        );
+        if (patch.client && !client)
+          unresolved.push(`client.slug="${patch.client.slug}"`);
         (set as Record<string, unknown>).client = client;
       }
       if (patch.studio !== undefined) {
-        const studio = await resolveOneRelation(patch.studio, "studio", relOpts);
-        if (patch.studio && !studio) unresolved.push(`studio.slug="${patch.studio.slug}"`);
+        const studio = await resolveOneRelation(
+          patch.studio,
+          "studio",
+          relOpts
+        );
+        if (patch.studio && !studio)
+          unresolved.push(`studio.slug="${patch.studio.slug}"`);
         (set as Record<string, unknown>).studio = studio;
       }
 
       if (unresolved.length) {
         throw new Error(
-          `Unresolved relations: ${unresolved.join(", ")}. Pass "?allowNew=1" and include {_new:true} to create new ones.`
+          `Unresolved relations: ${unresolved.join(
+            ", "
+          )}. Pass "?allowNew=1" and include {_new:true} to create new ones.`
         );
       }
 
-      await Demo.updateOne({ _id: existing._id }, set, { session: session ?? undefined });
-      const found = await Demo.findById(existing._id).session(session ?? null).lean<PlainObject | null>();
+      await Demo.updateOne({ _id: existing._id }, set, {
+        session: session ?? undefined,
+      });
+      const found = await Demo.findById(existing._id)
+        .session(session ?? null)
+        .lean<PlainObject | null>();
       updated = found ?? {};
     });
 
@@ -195,10 +276,13 @@ export async function updateDemoBySlug(
 
 export async function deleteDemoBySlug(
   slug: string
-): Promise<{ ok: true; deletedCount: number } | { ok: false; error: RepoError }> {
+): Promise<
+  { ok: true; deletedCount: number } | { ok: false; error: RepoError }
+> {
   try {
     const res = await Demo.deleteOne({ slug });
-    if ((res.deletedCount ?? 0) === 0) return { ok: false, error: { message: `Demo "${slug}" not found` } };
+    if ((res.deletedCount ?? 0) === 0)
+      return { ok: false, error: { message: `Demo "${slug}" not found` } };
     return { ok: true, deletedCount: res.deletedCount ?? 0 };
   } catch (e: unknown) {
     const message = e instanceof Error ? e.message : "Failed to delete demo";
