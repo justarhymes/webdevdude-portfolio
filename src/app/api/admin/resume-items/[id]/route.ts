@@ -13,10 +13,15 @@ function qpBool(url: URL, key: string) {
   return v === "1" || v?.toLowerCase() === "true";
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(
+  req: NextRequest,
+  ctx: { params: Promise<{ id: string }> } // Next 15: params is a Promise
+) {
   const unauthorized = requireAdmin(req);
   if (unauthorized) return unauthorized;
   await connectToDB();
+
+  const { id } = await ctx.params;
 
   const url = new URL(req.url);
   const allowNew = qpBool(url, "allowNew");
@@ -25,25 +30,46 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   const json = await req.json();
   const parsed = Patch.safeParse(json);
   if (!parsed.success) {
-    return NextResponse.json({ error: { message: "Invalid body" } }, { status: 400 });
+    return NextResponse.json(
+      { error: { message: "Invalid body" } },
+      { status: 400 }
+    );
   }
 
   const p = parsed.data;
   const $set: Record<string, unknown> = { ...p };
-  if (p.skills) $set.skills = await resolveManyRelations(p.skills, "skill", { allowNew, backfillSlug: true });
+  if (p.skills) {
+    $set.skills = await resolveManyRelations(p.skills, "skill", {
+      allowNew,
+      backfillSlug: true,
+    });
+  }
 
   if (dryRun) return NextResponse.json({ dryRun: true, set: $set });
 
-  const doc = await ResumeItem.findByIdAndUpdate(params.id, { $set }, { new: true }).lean();
-  if (!doc) return NextResponse.json({ error: { message: "Not found" } }, { status: 404 });
+  const doc = await ResumeItem.findByIdAndUpdate(
+    id,
+    { $set },
+    { new: true }
+  ).lean();
+  if (!doc)
+    return NextResponse.json(
+      { error: { message: "Not found" } },
+      { status: 404 }
+    );
   return NextResponse.json(doc);
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(
+  req: NextRequest,
+  ctx: { params: Promise<{ id: string }> } // Next 15: params is a Promise
+) {
   const unauthorized = requireAdmin(req);
   if (unauthorized) return unauthorized;
   await connectToDB();
 
-  const res = await ResumeItem.deleteOne({ _id: params.id });
+  const { id } = await ctx.params;
+
+  const res = await ResumeItem.deleteOne({ _id: id });
   return NextResponse.json({ ok: res.deletedCount === 1 });
 }
