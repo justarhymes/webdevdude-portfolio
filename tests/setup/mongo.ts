@@ -1,3 +1,4 @@
+import { beforeAll, afterAll, afterEach } from "vitest";
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
 
@@ -12,7 +13,7 @@ beforeAll(async () => {
   mongo = await MongoMemoryServer.create();
   const uri = mongo.getUri();
 
-  // 👇 Make route handlers happy (connectToDB reads this)
+  // For connectToDB
   process.env.MONGODB_URI = uri;
   process.env.MONGO_DB = "vitest";
 
