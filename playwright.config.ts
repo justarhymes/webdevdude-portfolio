@@ -11,13 +11,14 @@ export default defineConfig({
   timeout: 30_000,
   workers: 1,
   use: {
-    baseURL: "http://127.0.0.1:3001", // force IPv4 + 3001
+    baseURL: "http://127.0.0.1:3001",
   },
   webServer: {
     command: "sh -c 'npm run build && next start -p 3001 -H 127.0.0.1'",
     url: "http://127.0.0.1:3001",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
+    env: { ADMIN_TOKEN: "ci-admin" },
   },
   reporter: "list",
 });

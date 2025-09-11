@@ -12,7 +12,7 @@ test("dryRun create returns a plan and writes nothing", async ({ request }) => {
   const slug = `dry-${Date.now()}`;
   const res = await request.post(`/api/admin/projects?dryRun=1&allowNew=1`, {
     headers: {
-      "x-admin-token": process.env.ADMIN_TOKEN!,
+      "x-admin-token": process.env.ADMIN_TOKEN || "ci-admin",
       "content-type": "application/json",
     },
     data: { title: "Dry", slug, media: [], skills: [] },
