@@ -172,6 +172,7 @@ GitHub Actions workflow:
    - While already on a detail page, switch to a **fade-in** of `<ProjectDetail>` when changing slugs; no slide, grid stays put.
 4. **View Transition polish (progressive enhancement)**
    - Only where it adds value: match `viewTransitionName` for **thumb → hero** and **title → title** on grid→detail.
+   - Fix bugs with transition (currently detail stays open and never closes)
 5. **Tailwind polish** — consistent spacing, chips, tokens
 6. **`/resume` route** — list + detail for resume items
 7. **Demos section** — cards + detail with `DemoLinks`
