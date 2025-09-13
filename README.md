@@ -165,13 +165,14 @@ GitHub Actions workflow:
 
 ## Roadmap / Next Steps
 
-1. **Home → /work/[slug] slide-down**
+1. **Project featured/order** - Incorporate order and featured into projects (as shown in the model)
+2. **Home → /work/[slug] slide-down**
    - Implement slide-down detail when navigating from **Home**; keep Home’s content below the detail in the same flow.
-2. **Detail→Detail fade on `/work/[slug]`**
+3. **Detail→Detail fade on `/work/[slug]`**
    - While already on a detail page, switch to a **fade-in** of `<ProjectDetail>` when changing slugs; no slide, grid stays put.
-3. **View Transition polish (progressive enhancement)**
+4. **View Transition polish (progressive enhancement)**
    - Only where it adds value: match `viewTransitionName` for **thumb → hero** and **title → title** on grid→detail.
-4. **Tailwind polish** — consistent spacing, chips, tokens
-5. **`/resume` route** — list + detail for resume items
-6. **Demos section** — cards + detail with `DemoLinks`
-7. **Contract tests** — ensure FE fields match API (types stay in sync, including `tasks`)
+5. **Tailwind polish** — consistent spacing, chips, tokens
+6. **`/resume` route** — list + detail for resume items
+7. **Demos section** — cards + detail with `DemoLinks`
+8. **Contract tests** — ensure FE fields match API (types stay in sync, including `tasks`)
