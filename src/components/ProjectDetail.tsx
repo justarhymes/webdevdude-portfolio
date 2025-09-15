@@ -43,8 +43,13 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <>
+      {/* Screen-reader announcement on change */}
+      <div aria-live='polite' className='sr-only' key={`announce-${slug}`}>
+        {title}
+      </div>
+
       <section className='flex gap-4 flex-col lg:flex-row-reverse'>
-        <header className='lg:mb-4'>
+        <header className='shrink-0 lg:mb-4 lg:basis-75'>
           <div className='card p-4'>
             <h1 className='text-2xl' style={{ viewTransitionName: vtTitle }}>
               {title}

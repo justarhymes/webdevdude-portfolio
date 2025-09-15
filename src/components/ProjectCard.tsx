@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { vtNames } from "@/lib/viewTransition";
+import { usePathname } from "next/navigation";
 
 type ProjectListItem = {
   slug: string;
@@ -16,11 +17,22 @@ type ProjectListItem = {
 export default function ProjectCard({
   project,
   imgSrc,
+  /** force the active state if needed (optional) */
+  active,
 }: {
   project: ProjectListItem;
   /** Stable URL computed on the server in WorkPage (prevents hydration mismatch). */
   imgSrc?: string;
+  active?: boolean;
 }) {
+  const pathname = usePathname();
+  // If we're on /work/[slug], derive the current slug from the URL.
+  const pathSlug = pathname?.startsWith("/work/")
+    ? decodeURIComponent(pathname.split("/")[2] ?? "")
+    : undefined;
+  const isActive =
+    typeof active === "boolean" ? active : pathSlug === project.slug;
+
   const label = project.title ?? project.slug;
   const typeName = project.type?.name ?? "";
   const year = project.year != null ? String(project.year) : "";
@@ -29,10 +41,13 @@ export default function ProjectCard({
   const { image: vtImage, title: vtTitle } = vtNames(project.slug);
 
   return (
-    <article className='group'>
+    <article className='group' data-active={isActive || undefined}>
       <Link
         href={`/work/${project.slug}`}
-        className='card block shadow transition-all duration-300 focus:outline-none hover:scale-95 hover:shadow-xl'
+        className={`card block shadow transition-all duration-300 focus:outline-none hover:scale-95 hover:shadow-xl ${
+          isActive ? "ring-2 ring-[var(--color-fg-muted-500)] opacity-50" : ""
+        }`}
+        aria-current={isActive ? "true" : undefined}
         aria-labelledby={`title-${project.slug}`}>
         {/* Card image */}
         <figure className='relative aspect-square w-full overflow-hidden bg-transparent'>

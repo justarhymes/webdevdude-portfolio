@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
+import DetailGate from "@/components/DetailGate";
 import { hack } from "@/fonts/hack";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  detail, // 👈 root-level parallel slot
+  detail,
 }: {
   children: React.ReactNode;
   detail: React.ReactNode;
@@ -26,10 +27,9 @@ export default function RootLayout({
         <SiteNav />
         <div className='mx-auto max-w-6xl px-4 py-8'>
           {/* When present (e.g., navigating from /work → /work/[slug]), 
-             the intercepted ProjectDetail will render here ABOVE the page. */}
-          {detail}
-
-          {/* Normal route content */}
+             the intercepted ProjectDetail will render here ABOVE the page.
++            DetailGate hides this slot on non-/work routes. */}
+          <DetailGate>{detail}</DetailGate>
           {children}
         </div>
         <SiteFooter />

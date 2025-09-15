@@ -5,7 +5,7 @@ import { normalizeMediaPath } from "@/lib/url";
 import CommentHeader from "@/components/CommentHeader";
 import StringText from "@/components/StringText";
 import ProjectCard from "@/components/ProjectCard";
-import ProjectDetail from "@/components/ProjectDetail";
+import AutoOpenFeatured from "./AutoOpenFeatured";
 
 type ApiListResponse = {
   page: number;
@@ -26,7 +26,6 @@ async function fetchProjects(): Promise<ApiListResponse> {
 export default async function WorkPage() {
   const data = await fetchProjects();
   const featuredItem = data.items.find((p) => p.featured);
-  const restItems = data.items.filter((p) => p.slug !== featuredItem?.slug);
 
   return (
     <>
@@ -38,11 +37,11 @@ export default async function WorkPage() {
           A handful of projects across apps, sites, and products.
         </StringText>
       </header>
-
-      {featuredItem ? <ProjectDetail project={featuredItem} /> : null}
+      {/* Auto-open the featured project in the @detail slot on first load of /work */}
+      <AutoOpenFeatured slug={featuredItem?.slug} />
 
       <ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-        {restItems.map((p) => {
+        {data.items.map((p) => {
           const imgSrc = p.thumb
             ? normalizeMediaPath(p.thumb) ?? undefined
             : undefined;

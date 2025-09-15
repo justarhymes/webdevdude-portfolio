@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 /* Dev: make View Transitions more obvious */
-:root { --vt-duration: 300ms; }
+:root {
+  --vt-duration: 300ms;
+}
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -11,14 +13,14 @@
 /* Design tokens via Tailwind v4 @theme (creates utilities like text-*, bg-*) */
 @theme {
   /* Brand palette — use -500 for single-stop colors */
-  --color-cadet-500: #abb2bf;         /* default text */
-  --color-blackcoral-500: #5c6370;    /* alt text (code-comment look) */
-  --color-outerspace-500: #2f333d;    /* card/pill/box backgrounds */
-  --color-gunmetal-500: #282c34;      /* site background */
+  --color-cadet-500: #abb2bf; /* default text */
+  --color-blackcoral-500: #5c6370; /* alt text (code-comment look) */
+  --color-outerspace-500: #2f333d; /* card/pill/box backgrounds */
+  --color-gunmetal-500: #282c34; /* site background */
   --color-purplepizzazz-500: #e643e0; /* primary accent */
-  --color-seaserpent-500: #43d1e6;    /* secondary accent */
-  --color-tan-500: #db9f67;           /* link text */
-  --color-peru-500: #d1853e;          /* link hover */
+  --color-seaserpent-500: #43d1e6; /* secondary accent */
+  --color-tan-500: #db9f67; /* link text */
+  --color-peru-500: #d1853e; /* link hover */
 
   /* Optional semantic aliases (handy for future theming) */
   --color-fg-500: var(--color-cadet-500);
@@ -28,9 +30,14 @@
 }
 
 /* Base element styles */
-:root { color-scheme: dark; }
+:root {
+  color-scheme: dark;
+}
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -38,27 +45,52 @@ body {
   color: var(--color-fg-500);
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
 
 /* Links */
-a { color: var(--color-tan-500); text-decoration: none; }
-a:hover { color: var(--color-peru-500); text-decoration: none; }
+a {
+  color: var(--color-tan-500);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-peru-500);
+  text-decoration: none;
+}
 
 /* A small utility for “code-comment” style text */
-.code-comment { color: var(--color-blackcoral-500); }
+.code-comment {
+  color: var(--color-blackcoral-500);
+}
 
 /* Card background + rounding/clip */
 .card {
   background-color: var(--color-card-500);
   color: var(--color-fg-500);
 }
-.card:hover { color: var(--color-fg-500); }
+.card:hover {
+  color: var(--color-fg-500);
+}
 
 /* Comment/string helpers for headings/lead text */
-.comment { color: var(--color-fg-muted-500); }
-.comment:before { content: "// "; }
-.string:before { content: open-quote; }
-.string:after  { content: close-quote }
+.comment {
+  color: var(--color-fg-muted-500);
+}
+.comment:before {
+  content: "// ";
+}
+.string:before {
+  content: open-quote;
+}
+.string:after {
+  content: close-quote;
+}
 
 /**
  * Next/font injects the --font-hack variable when we add hack.variable
@@ -71,7 +103,29 @@ a:hover { color: var(--color-peru-500); text-decoration: none; }
 }
 
 /* Apply Hack automatically to code-ish elements */
-code, pre, kbd, samp {
+code,
+pre,
+kbd,
+samp {
   font-family: var(--font-hack), ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ---- Detail cross-fade on slug change ---- */
+@keyframes detail-fade {
+  from {
+    opacity: 0.001;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.detail-fade-in {
+  animation: detail-fade 300ms ease-out;
+  will-change: opacity;
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-fade-in {
+    animation: none;
+  }
 }
