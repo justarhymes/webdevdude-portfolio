@@ -1,10 +1,10 @@
-import type { ResumeItemDTO } from "@/domain/resume";
-import { getBaseUrl } from "@/lib/requestBase";
+//import type { ResumeItemDTO } from "@/domain/resume";
+//import { getBaseUrl } from "@/lib/requestBase";
 
 // We need request headers → render dynamically
-export const dynamic = "force-dynamic";
+//export const dynamic = "force-dynamic";
 
-type GroupedResume = Record<string, ResumeItemDTO[]>;
+//type GroupedResume = Record<string, ResumeItemDTO[]>;
 
 export default async function ResumePage() {
   /*const base = await getBaseUrl();

@@ -1,4 +1,4 @@
-// work page
+// home page
 import { Project } from "@/types/project";
 import { getBaseUrl } from "@/lib/requestBase";
 import { normalizeMediaPath } from "@/lib/url";
