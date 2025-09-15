@@ -29,7 +29,7 @@ export default async function HomePage() {
     <>
       <header className='mb-4'>
         <CommentHeader as='h2' className='text-xl mb-2'>
-          Work I've done
+          Work I’ve done
         </CommentHeader>
         <StringText as='p'>
           A handful of projects across apps, sites, and products.
