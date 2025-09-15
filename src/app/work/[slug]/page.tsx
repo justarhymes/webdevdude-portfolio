@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { Project, ProjectDetailResponse } from "@/types/project";
 import ProjectDetail from "@/components/ProjectDetail";
-import type { MediaItem } from "@/types/media";
-import { normalizeMediaPath } from "@/lib/url";
+import { normalizeMediaItems } from "@/lib/media";
 import { getBaseUrl } from "@/lib/requestBase";
 
 export const revalidate = 60;
@@ -20,24 +19,6 @@ async function fetchProject(slug: string): Promise<Project | null> {
   if (!res.ok) throw new Error(`Failed to fetch project: ${res.status}`);
   const data = (await res.json()) as ProjectDetailResponse;
   return (data as unknown as Project) ?? null;
-}
-
-function normalizeImages(
-  media?: Array<MediaItem | string | null | undefined>
-): MediaItem[] {
-  if (!Array.isArray(media)) return [];
-  return media
-    .map((m) => {
-      if (!m) return null;
-      if (typeof m === "string") {
-        const url = normalizeMediaPath(m);
-        return url ? ({ url } as MediaItem) : null;
-      }
-      const maybe = m as Partial<MediaItem>;
-      const url = normalizeMediaPath(maybe.url);
-      return url ? ({ ...maybe, url } as MediaItem) : null;
-    })
-    .filter(Boolean) as MediaItem[];
 }
 
 function pickDescription(p: unknown): string | undefined {
@@ -60,7 +41,7 @@ export async function generateMetadata({
   const title = item.title ?? slug;
   const description = pickDescription(item) ?? "Project detail";
 
-  const media = normalizeImages(item.media);
+  const media = normalizeMediaItems(item.media);
   const ogImg = media[0]?.url ?? undefined;
 
   return {

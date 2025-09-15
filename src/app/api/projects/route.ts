@@ -65,7 +65,7 @@ export async function GET(req: Request) {
 
   const [rawItems, total] = await Promise.all([
     Project.find(filter)
-      .sort({ order: 1, createdAt: -1 })
+      .sort({ featured: -1, order: 1, createdAt: -1 })
       .skip(skip)
       .limit(limit)
       .lean<RawProject[]>(), // ⬅️ use RawProject

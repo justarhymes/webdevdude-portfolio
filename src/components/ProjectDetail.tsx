@@ -1,31 +1,10 @@
-import type { MediaItem } from "@/types/media";
 import type { Project } from "@/types/project";
 import ProjectGallery from "@/components/ProjectGallery";
 import TagList from "./TagList";
 import Tag from "./Tag";
-import { cleanLinkText, normalizeMediaPath } from "@/lib/url";
+import { cleanLinkText } from "@/lib/url";
+import { normalizeMediaItems } from "@/lib/media";
 import { vtNames } from "@/lib/viewTransition";
-
-// Accept the shapes you actually pass around (string | MediaItem | nullish)
-function normalizeImages(
-  media?: Array<MediaItem | string | null | undefined>
-): MediaItem[] {
-  if (!Array.isArray(media)) return [];
-  const normalized = media
-    .map((m) => {
-      if (!m) return null;
-      if (typeof m === "string") {
-        const url = normalizeMediaPath(m);
-        return url ? ({ url } as MediaItem) : null;
-      }
-      // m is (partial) MediaItem
-      const maybe = m as Partial<MediaItem>;
-      const url = normalizeMediaPath(maybe.url);
-      return url ? ({ ...maybe, url } as MediaItem) : null;
-    })
-    .filter(Boolean) as MediaItem[];
-  return normalized;
-}
 
 // Narrow a tag-like thing to { slug?: string; name?: string }
 function isSlugRef(v: unknown): v is { slug?: string; name?: string } {
@@ -57,7 +36,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
   const yearText =
     typeof year === "string" ? year : year != null ? String(year) : "";
 
-  const normalizedMedia = normalizeImages(media);
+  const normalizedMedia = normalizeMediaItems(media);
 
   // Shared-element names (for card→detail morph; harmless if unsupported)
   const { image: vtImage, title: vtTitle } = vtNames(slug);

@@ -26,6 +26,7 @@ export type Project = {
   featured?: boolean;
   published?: boolean;
   year?: number;
+  order?: number;
 
   // Nice-to-haves
   abbreviation?: string;

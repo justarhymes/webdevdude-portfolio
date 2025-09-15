@@ -33,5 +33,8 @@ const ProjectSchema = new Schema(
   { timestamps: true }
 );
 
+// Optimize the common listing sort: featured DESC, order ASC, createdAt DESC
+ProjectSchema.index({ featured: -1, order: 1, createdAt: -1 });
+
 export type ProjectDoc = InferSchemaType<typeof ProjectSchema>;
 export const Project = models.Project || model("Project", ProjectSchema);
