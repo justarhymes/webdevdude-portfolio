@@ -1,8 +1,12 @@
+// src/repositories/resumeRepository.ts
 import mongoose from "mongoose";
 import { ResumeItem } from "@/models/ResumeItem";
 import { Skill } from "@/models/Skill";
 import { ResumeItemInput, ResumeItemUpdate } from "@/domain/resume";
-import { resolveManyRelations } from "@/repositories/relationResolvers";
+import {
+  resolveManyRelations,
+  type RelInput,
+} from "@/repositories/relationResolvers";
 import { withOptionalTransaction } from "@/lib/tx";
 import type { PublicIssue } from "@/lib/parse";
 import { slugify } from "@/lib/slug";
@@ -12,16 +16,57 @@ export type CreateOpts = {
   upsert?: boolean;
   allowNew?: boolean;
 };
+
 type RepoError = { message: string; issues?: ReadonlyArray<PublicIssue> };
 type PlainObject = Record<string, unknown>;
+
 type LeanRel = { slug: string; name?: string };
+
+// The inputs we accept for a relation in this repo,
+// mirroring what the rest of the app passes around.
+type MaybeRelInput =
+  | RelInput
+  | { slug?: string; name?: string }
+  | null
+  | undefined;
+
 type DryRunPlan = {
   action: "create" | "update";
   id?: string;
   set: Record<string, unknown>;
 };
 
-// CREATE / UPSERT
+// ---------- helpers ----------
+
+function desiredSlugName(rel: MaybeRelInput): { slug?: string; name?: string } {
+  if (!rel) return {};
+  // RelInput shape is typically { slug?: string; name?: string }
+  const maybeSlug =
+    typeof (rel as { slug?: unknown }).slug === "string"
+      ? (rel as { slug: string }).slug
+      : undefined;
+
+  const maybeName =
+    typeof (rel as { name?: unknown }).name === "string"
+      ? (rel as { name: string }).name
+      : // Some callers historically use {slug: "React"} to mean name=React.
+      typeof (rel as { slug?: unknown }).slug === "string"
+      ? (rel as { slug: string }).slug
+      : undefined;
+
+  if (maybeSlug) return { slug: maybeSlug, name: maybeName };
+  if (maybeName) return { slug: slugify(maybeName), name: maybeName };
+  return {};
+}
+
+function normalizeLean(rel: MaybeRelInput): LeanRel | undefined {
+  const { slug, name } = desiredSlugName(rel);
+  if (!slug) return undefined;
+  return { slug, name };
+}
+
+// ---------- CREATE / UPSERT ----------
+
 export async function createResumeItem(
   payload: ResumeItemInput,
   opts: CreateOpts = {}
@@ -51,23 +96,10 @@ export async function createResumeItem(
 
     if (opts.dryRun) {
       // DRY-RUN: show the *full* intended stack without writing.
-      // If allowNew, synthesize slugs for name-only skills so you can preview.
-      const inSkills = payload.skills ?? [];
-      const skills = opts.allowNew
-        ? (inSkills
-            .map((s: any) => {
-              const name: string | undefined =
-                s?.name ?? (typeof s?.slug === "string" ? s.slug : undefined);
-              const slug: string | undefined =
-                typeof s?.slug === "string"
-                  ? s.slug
-                  : name
-                  ? slugify(name)
-                  : undefined;
-              return slug ? ({ slug, name } as LeanRel) : undefined;
-            })
-            .filter(Boolean) as LeanRel[])
-        : await resolveManyRelations(inSkills, "skill"); // strict preview when not allowing new
+      const inSkills: MaybeRelInput[] = payload.skills ?? [];
+      const skills: LeanRel[] = opts.allowNew
+        ? (inSkills.map(normalizeLean).filter(Boolean) as LeanRel[])
+        : await resolveManyRelations(inSkills, "skill");
 
       return {
         ok: true,
@@ -82,43 +114,42 @@ export async function createResumeItem(
     let result: PlainObject | null = null;
 
     await withOptionalTransaction(async (session) => {
-      let skills = await resolveManyRelations(payload.skills, "skill", {
-        session,
-        allowNew: opts.allowNew,
-        backfillSlug: true,
-      });
+      const resolved: LeanRel[] = await resolveManyRelations(
+        payload.skills ?? [],
+        "skill",
+        {
+          session,
+          allowNew: opts.allowNew,
+          backfillSlug: true,
+        }
+      );
+
       // Fallback: if some requested skills are still unresolved but allowNew=true,
-      // upsert them directly into the Skill catalog and append to the resolved list.
+      // upsert them into Skill and append.
       if (opts.allowNew) {
-        const resolvedSlugs = new Set(
-          (skills as Array<{ slug: string }>).map((s) => s.slug)
-        );
-        for (const rel of payload.skills ?? []) {
-          const wantSlug =
-            (rel as any)?.slug ??
-            ((rel as any)?.name ? slugify((rel as any).name) : undefined);
-          const wantName =
-            (rel as any)?.name ??
-            (typeof (rel as any)?.slug === "string"
-              ? (rel as any).slug
-              : undefined);
-          if (!wantSlug) continue;
-          if (resolvedSlugs.has(wantSlug)) continue;
+        const resolvedSlugs = new Set(resolved.map((s) => s.slug));
+        const requested: MaybeRelInput[] = payload.skills ?? [];
+        for (const rel of requested) {
+          const { slug, name } = desiredSlugName(rel);
+          if (!slug) continue;
+          if (resolvedSlugs.has(slug)) continue;
+
           const doc = await Skill.findOneAndUpdate(
-            { slug: wantSlug },
-            { $setOnInsert: { slug: wantSlug, name: wantName ?? wantSlug } },
+            { slug },
+            { $setOnInsert: { slug, name: name ?? slug } },
             { upsert: true, new: true, session: session ?? undefined }
           ).lean<{ slug: string; name?: string } | null>();
           if (doc?.slug) {
-            skills.push({
+            resolved.push({
               slug: doc.slug,
-              name: doc.name ?? wantName ?? doc.slug,
-            } as any);
+              name: doc.name ?? name ?? doc.slug,
+            });
             resolvedSlugs.add(doc.slug);
           }
         }
       }
-      const data: PlainObject = { ...payload, skills };
+
+      const data: PlainObject = { ...payload, skills: resolved };
 
       if (existing) {
         await ResumeItem.updateOne({ _id: existing._id }, data, {
@@ -144,7 +175,8 @@ export async function createResumeItem(
   }
 }
 
-// UPDATE by ID
+// ---------- UPDATE by ID ----------
+
 export async function updateResumeItemById(
   id: string,
   patch: ResumeItemUpdate,
@@ -159,39 +191,32 @@ export async function updateResumeItemById(
 
     if (opts.dryRun) {
       const plan: DryRunPlan = { action: "update", id, set: {} };
-      for (const k of [
-        "section",
-        "title",
-        "organization",
-        "location",
-        "startDate",
-        "endDate",
-        "current",
-        "bullets",
-        "links",
-        "order",
-        "hidden",
-      ] as const) {
-        if ((patch as Record<string, unknown>)[k] !== undefined) {
-          plan.set[k] = (patch as Record<string, unknown>)[k]!;
+
+      (
+        [
+          "section",
+          "title",
+          "organization",
+          "location",
+          "startDate",
+          "endDate",
+          "current",
+          "bullets",
+          "links",
+          "order",
+          "hidden",
+        ] as const
+      ).forEach((k) => {
+        const v = patch[k];
+        if (v !== undefined) {
+          (plan.set as Record<string, unknown>)[k] = v as unknown;
         }
-      }
+      });
+
       if (patch.skills !== undefined) {
-        const inSkills = patch.skills ?? [];
+        const inSkills: MaybeRelInput[] = patch.skills ?? [];
         plan.set.skills = opts.allowNew
-          ? ((inSkills as any[])
-              .map((s) => {
-                const name: string | undefined =
-                  s?.name ?? (typeof s?.slug === "string" ? s.slug : undefined);
-                const slug: string | undefined =
-                  typeof s?.slug === "string"
-                    ? s.slug
-                    : name
-                    ? slugify(name)
-                    : undefined;
-                return slug ? ({ slug, name } as LeanRel) : undefined;
-              })
-              .filter(Boolean) as LeanRel[])
+          ? (inSkills.map(normalizeLean).filter(Boolean) as LeanRel[])
           : await resolveManyRelations(inSkills, "skill");
       }
       return { ok: true, data: plan as unknown as PlainObject };
@@ -202,10 +227,9 @@ export async function updateResumeItemById(
     await withOptionalTransaction(async (session) => {
       const set: PlainObject = {};
 
-      const put = (k: keyof ResumeItemUpdate) => {
+      const put = <K extends keyof ResumeItemUpdate>(k: K) => {
         const v = patch[k];
-        if (v !== undefined)
-          (set as Record<string, unknown>)[k as string] = v as unknown;
+        if (v !== undefined) (set as Record<string, unknown>)[k as string] = v;
       };
 
       put("section");
@@ -221,48 +245,51 @@ export async function updateResumeItemById(
       put("hidden");
 
       if (patch.skills !== undefined) {
-        let skills = await resolveManyRelations(patch.skills, "skill", {
-          session,
-          allowNew: opts.allowNew,
-          backfillSlug: true,
-        });
+        const resolved: LeanRel[] = await resolveManyRelations(
+          patch.skills ?? [],
+          "skill",
+          {
+            session,
+            allowNew: opts.allowNew,
+            backfillSlug: true,
+          }
+        );
+
         if (opts.allowNew) {
-          const resolvedSlugs = new Set(
-            (skills as Array<{ slug: string }>).map((s) => s.slug)
-          );
-          for (const rel of patch.skills ?? []) {
-            const wantSlug =
-              (rel as any)?.slug ??
-              ((rel as any)?.name ? slugify((rel as any).name) : undefined);
-            const wantName =
-              (rel as any)?.name ??
-              (typeof (rel as any)?.slug === "string"
-                ? (rel as any).slug
-                : undefined);
-            if (!wantSlug) continue;
-            if (resolvedSlugs.has(wantSlug)) continue;
+          const resolvedSlugs = new Set(resolved.map((s) => s.slug));
+          const requested: MaybeRelInput[] = patch.skills ?? [];
+          for (const rel of requested) {
+            const { slug, name } = desiredSlugName(rel);
+            if (!slug) continue;
+            if (resolvedSlugs.has(slug)) continue;
+
             const doc = await Skill.findOneAndUpdate(
-              { slug: wantSlug },
-              { $setOnInsert: { slug: wantSlug, name: wantName ?? wantSlug } },
+              { slug },
+              { $setOnInsert: { slug, name: name ?? slug } },
               { upsert: true, new: true, session: session ?? undefined }
             ).lean<{ slug: string; name?: string } | null>();
             if (doc?.slug) {
-              skills.push({
+              resolved.push({
                 slug: doc.slug,
-                name: doc.name ?? wantName ?? doc.slug,
-              } as any);
+                name: doc.name ?? name ?? doc.slug,
+              });
               resolvedSlugs.add(doc.slug);
             }
           }
         }
+
+        // Validate every requested relation was resolved
         for (const rel of patch.skills ?? []) {
-          if (!skills.find((s: LeanRel) => s.slug === rel.slug)) {
-            throw new Error(
-              `Unresolved relation: skills.slug="${(rel as any).slug}"`
-            );
+          const norm = normalizeLean(rel);
+          if (!norm) {
+            throw new Error(`Unresolved relation in skills (missing slug)`);
+          }
+          if (!resolved.find((s) => s.slug === norm.slug)) {
+            throw new Error(`Unresolved relation: skills.slug="${norm.slug}"`);
           }
         }
-        (set as Record<string, unknown>).skills = skills;
+
+        (set as Record<string, unknown>).skills = resolved;
       }
 
       await ResumeItem.updateOne({ _id: existing._id }, set, {
@@ -281,6 +308,8 @@ export async function updateResumeItemById(
     return { ok: false, error: { message } };
   }
 }
+
+// ---------- DELETE ----------
 
 export async function deleteResumeItemById(
   id: string

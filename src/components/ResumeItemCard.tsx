@@ -23,18 +23,18 @@ export default function ResumeItemCard({ item }: Props) {
   const dateStr = formatResumeDates(startDate, endDate, current);
 
   return (
-    <article className='border border-white/10 bg-[--card]/60 p-4 shadow-sm'>
+    <article className='bg-card-500 p-8 shadow-sm'>
       <header className='mb-2'>
-        <h3 className='text-base font-semibold leading-tight'>
+        <h3 className='text-lg'>
           {title}
           {organization ? (
-            <span className='text-sm font-normal opacity-80'>
+            <span className='text-base text-fg-muted-500'>
               {" "}
               — {organization}
             </span>
           ) : null}
         </h3>
-        <p className='text-sm opacity-80'>
+        <p className='text-sm text-fg-muted-500'>
           {[dateStr, location].filter(Boolean).join(" • ")}
         </p>
       </header>
@@ -42,7 +42,7 @@ export default function ResumeItemCard({ item }: Props) {
       {!!(bullets && bullets.length) && (
         <ul className='list-disc ms-5 space-y-1 mb-3'>
           {bullets.map((b, i) => (
-            <li key={i} className='text-sm leading-relaxed'>
+            <li key={i} className='text-justify text-xs leading-relaxed'>
               {b}
             </li>
           ))}
@@ -58,7 +58,7 @@ export default function ResumeItemCard({ item }: Props) {
                   href={l.href}
                   target='_blank'
                   rel='noreferrer noopener'
-                  className='text-sm underline hover:no-underline focus:outline-none focus:ring'>
+                  className='text-sm focus:outline-none focus:ring'>
                   {l.label}
                 </a>
               </li>
@@ -73,7 +73,7 @@ export default function ResumeItemCard({ item }: Props) {
             {skills?.map((s) => (
               <span
                 key={s.slug}
-                className='px-2 py-0.5 border border-white/10 text-xs opacity-90'
+                className='bg-bg-500 py-2 px-4 text-sm'
                 aria-label={`Skill: ${s.name ?? s.slug}`}
                 title={s.name ?? s.slug}>
                 {s.name ?? s.slug}
