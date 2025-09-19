@@ -21,9 +21,10 @@ export const ResumeItemInput = z.object({
   current: z.boolean().default(false),
 
   bullets: z.array(z.string()).default([]),
-  links: z.array(z.object({ label: z.string(), href: z.url()})).default([]),
+  links: z.array(z.object({ label: z.string(), href: z.url() })).default([]),
 
   skills: z.array(Relation).default([]),
+  tags: z.array(z.string()).default([]),
 
   order: z.number().int().optional(),
   hidden: z.boolean().default(false),

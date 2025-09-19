@@ -1,4 +1,5 @@
 import { WithId, WithTimestamps } from "./common";
+import type { SlugRef } from "./common";
 
 export type ResumeSection =
   | "experience"
@@ -11,13 +12,16 @@ export type ResumeSection =
 export type ResumeItem = WithId &
   WithTimestamps & {
     section: ResumeSection;
-    title: string;          // Role or item title
-    org?: string;           // Company / School
-    location?: string;      // City, ST (optional)
-    start?: string;         // "2023-05"
-    end?: string;           // "Present" or "2025-01"
-    bullets?: string[];     // Markdown-friendly bullets
+    title: string; // Role or item title
+    organization?: string; // Company / School
+    location?: string; // City, ST
+    startDate?: string; // "2023-05"
+    endDate?: string; // "Present" or "2025-01"
+    current?: boolean;
+    bullets?: string[]; // Markdown-friendly bullets
     links?: { label: string; href: string }[];
-    tags?: string[];        // quick chips
+    skills?: SlugRef[]; // Tech stack (linked to global skills)
+    tags?: string[]; // Free-form chips
     order?: number;
+    hidden?: boolean;
   };

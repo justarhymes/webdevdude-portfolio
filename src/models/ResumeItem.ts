@@ -5,7 +5,14 @@ const ResumeItemSchema = new Schema(
   {
     section: {
       type: String,
-      enum: ["experience", "projects", "education", "awards", "skills", "other"],
+      enum: [
+        "experience",
+        "projects",
+        "education",
+        "awards",
+        "skills",
+        "other",
+      ],
       required: true,
       index: true,
     },
@@ -24,6 +31,7 @@ const ResumeItemSchema = new Schema(
     },
 
     skills: { type: [RelationalSubSchema], default: [] },
+    tags: { type: [String], default: [] },
 
     order: { type: Number },
     hidden: { type: Boolean, default: false },
@@ -31,5 +39,8 @@ const ResumeItemSchema = new Schema(
   { timestamps: true }
 );
 
-export type ResumeItemSchema = mongoose.InferSchemaType<typeof ResumeItemSchema>;
-export const ResumeItem = mongoose.models.ResumeItem || mongoose.model("ResumeItem", ResumeItemSchema);
+export type ResumeItemSchema = mongoose.InferSchemaType<
+  typeof ResumeItemSchema
+>;
+export const ResumeItem =
+  mongoose.models.ResumeItem || mongoose.model("ResumeItem", ResumeItemSchema);

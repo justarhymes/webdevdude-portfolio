@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "create:demo": "tsx scripts/create-demo.ts",
-    "create:resume": "tsx scripts/create-resume-item.ts",
+    "create:resume": "tsx -r tsconfig-paths/register scripts/create-resume-item.ts",
     "peek:project": "tsx -r tsconfig-paths/register scripts/peek-project.ts",
     "migrate:slugs": "tsx scripts/backfill-slugs.ts",
     "migrate:test": "tsx scripts/migrate-test-to-prod.ts",
