@@ -163,17 +163,39 @@ GitHub Actions workflow:
 
 ---
 
+## Resume CLI
+
+Create or update a resume item.
+
+Dry run (no writes):
+npm run create:resume -- --file=scripts/examples/resume-experience.json --dry-run
+Preview with new skills included:
+npm run create:resume -- --file=scripts/examples/resume-experience.json --dry-run --new-ok
+
+Write (create or update) and auto-create missing skills:
+npm run create:resume -- --file=scripts/examples/resume-experience.json --upsert --new-ok
+
+Inline JSON:
+npm run create:resume -- --json='{"section":"education","title":"B.S. ...","startDate":"2007-01"}' --upsert
+
+---
+
 ## Roadmap / Next Steps
 
-1. **Project featured/order** - Incorporate order and featured into projects (as shown in the model)
-2. **Home → /work/[slug] slide-down**
-   - Implement slide-down detail when navigating from **Home**; keep Home’s content below the detail in the same flow.
-3. **Detail→Detail fade on `/work/[slug]`**
-   - While already on a detail page, switch to a **fade-in** of `<ProjectDetail>` when changing slugs; no slide, grid stays put.
-4. **View Transition polish (progressive enhancement)**
-   - Only where it adds value: match `viewTransitionName` for **thumb → hero** and **title → title** on grid→detail.
-   - Fix bugs with transition (currently detail stays open and never closes)
-5. **Tailwind polish** — consistent spacing, chips, tokens
-6. **`/resume` route** — list + detail for resume items
-7. **Demos section** — cards + detail with `DemoLinks`
-8. **Contract tests** — ensure FE fields match API (types stay in sync, including `tasks`)
+### Upcoming
+
+1. **`/resume` page**
+
+   - Read & render grouped sections; sort by `order`, hide `hidden`.
+   - Show date ranges (“2016–2024” / “Present”), tech stack chips (`skills`) + tags.
+
+2. **View Transition polish**
+   - Match `viewTransitionName` for thumb→hero and title→title.
+   - Verify reduced-motion handling across transitions.
+
+### Later / Nice-to-have
+
+- Project filters (by type/skill) with URL params.
+- “Load more” / infinite scroll on grids.
+- Small admin scripts to toggle `featured` and set `order`.
+- SEO: per-project OG images (first media).
