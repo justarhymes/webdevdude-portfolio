@@ -1,10 +1,14 @@
-// src/components/ResumeItemCard.tsx
 import type { ResumeItem } from "@/types/resume";
 import { formatResumeDates } from "@/lib/date";
 
 type Props = {
   item: ResumeItem;
 };
+
+// Keep last two words together by turning the final space into a non-breaking space.
+function nbspLast(text: string): string {
+  return text.replace(/\s+([^\s]+)$/, "\u00A0$1");
+}
 
 export default function ResumeItemCard({ item }: Props) {
   const {
@@ -28,10 +32,7 @@ export default function ResumeItemCard({ item }: Props) {
         <h3 className='text-lg'>
           {title}
           {organization ? (
-            <span className='text-base text-fg-muted-500'>
-              {" "}
-              — {organization}
-            </span>
+            <span className='text-base opacity-80'> — {organization}</span>
           ) : null}
         </h3>
         <p className='text-sm text-fg-muted-500'>
@@ -40,31 +41,50 @@ export default function ResumeItemCard({ item }: Props) {
       </header>
 
       {!!(bullets && bullets.length) && (
-        <ul className='list-disc ms-5 space-y-1 mb-3'>
+        <ul className='list-disc ms-5 space-y-1 mb-2'>
           {bullets.map((b, i) => (
             <li key={i} className='text-justify text-xs leading-relaxed'>
-              {b}
+              {nbspLast(b)}
             </li>
           ))}
         </ul>
       )}
 
       {(links?.length ?? 0) > 0 && (
-        <div className='mb-2'>
-          <ul className='flex flex-wrap gap-3'>
-            {links!.map((l, i) => (
-              <li key={i}>
+        <p className='mb-2 text-sm'>
+          <span className='font-medium'>Links:</span>{" "}
+          {links!.map((l, i) => {
+            const total = links!.length;
+            const isLast = i === total - 1;
+            const isPenultimate = i === total - 2;
+
+            // Separator rules:
+            // - 2 items: "A and B."
+            // - 3+ items: "A, B, and C."
+            // - After last item: "."
+            let sep = "";
+            if (!isLast) {
+              if (total === 2 && i === 0) sep = " and ";
+              else if (isPenultimate) sep = ", and ";
+              else sep = ", ";
+            } else {
+              sep = ".";
+            }
+
+            return (
+              <span key={`${l.href}-${i}`}>
                 <a
                   href={l.href}
                   target='_blank'
                   rel='noreferrer noopener'
-                  className='text-sm focus:outline-none focus:ring'>
+                  className='underline hover:no-underline focus:outline-none focus:ring'>
                   {l.label}
                 </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+                {sep}
+              </span>
+            );
+          })}
+        </p>
       )}
 
       {(skills?.length ?? 0) > 0 || (tags?.length ?? 0) > 0 ? (

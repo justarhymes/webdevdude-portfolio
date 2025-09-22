@@ -5,6 +5,15 @@ import type { Project, ProjectDetailResponse } from "@/types/project";
 import ProjectDetail from "@/components/ProjectDetail";
 import { normalizeMediaItems } from "@/lib/media";
 import { getBaseUrl } from "@/lib/requestBase";
+import JsonLd from "@/components/JsonLd";
+import {
+  pageMetadata,
+  breadcrumbsJsonLd,
+  projectJsonLd,
+  combineJsonLd,
+} from "@/lib/seo";
+import { SITE_OWNER } from "@/lib/site";
+import { ogDefaultImage } from "@/lib/assets";
 
 export const revalidate = 60;
 
@@ -36,29 +45,29 @@ export async function generateMetadata({
 }: PageParams): Promise<Metadata> {
   const { slug } = await params;
   const item = await fetchProject(slug);
-  if (!item) return { title: "Project not found • Work" };
+  if (!item) {
+    return pageMetadata({
+      title: "Project not found",
+      description: "The requested project could not be found.",
+      path: `/work/${slug}`,
+      siteName: SITE_OWNER,
+      ogImage: ogDefaultImage(),
+    });
+  }
 
   const title = item.title ?? slug;
   const description = pickDescription(item) ?? "Project detail";
-
   const media = normalizeMediaItems(item.media);
-  const ogImg = media[0]?.url ?? undefined;
+  const ogImg = media[0]?.url ?? ogDefaultImage();
 
   return {
-    title: `${title} • Work`,
-    description,
-    openGraph: {
+    ...pageMetadata({
       title,
       description,
-      type: "article",
-      images: ogImg ? [{ url: ogImg }] : undefined,
-    },
-    twitter: {
-      card: ogImg ? "summary_large_image" : "summary",
-      title,
-      description,
-      images: ogImg ? [ogImg] : undefined,
-    },
+      path: `/work/${slug}`,
+      siteName: SITE_OWNER,
+      ogImage: ogImg,
+    }),
   };
 }
 
@@ -66,5 +75,24 @@ export default async function WorkDetailPage({ params }: PageParams) {
   const { slug } = await params;
   const item = await fetchProject(slug);
   if (!item) notFound();
-  return <ProjectDetail project={item} />;
+
+  const jsonLd = combineJsonLd(
+    breadcrumbsJsonLd([
+      { name: "Home", url: "/" },
+      { name: "Work", url: "/work" },
+      { name: item.title ?? slug, url: `/work/${slug}` },
+    ]),
+    projectJsonLd(item)
+  );
+
+  return (
+    <>
+      <JsonLd
+        data={jsonLd}
+        id='work-detail-jsonld'
+        strategy='beforeInteractive'
+      />
+      <ProjectDetail project={item} />
+    </>
+  );
 }

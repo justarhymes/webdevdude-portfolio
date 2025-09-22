@@ -1,4 +1,5 @@
 // work page
+import type { Metadata } from "next";
 import { Project } from "@/types/project";
 import { getBaseUrl } from "@/lib/requestBase";
 import { normalizeMediaPath } from "@/lib/url";
@@ -6,6 +7,23 @@ import CommentHeader from "@/components/CommentHeader";
 import StringText from "@/components/StringText";
 import ProjectCard from "@/components/ProjectCard";
 import AutoOpenFeatured from "./AutoOpenFeatured";
+import JsonLd from "@/components/JsonLd";
+import {
+  pageMetadata,
+  breadcrumbsJsonLd,
+  projectListItemListJsonLd,
+  combineJsonLd,
+} from "@/lib/seo";
+import { SITE_OWNER, TITLE_WORK, DESC_WORK } from "@/lib/site";
+import { ogDefaultImage } from "@/lib/assets";
+
+export const metadata: Metadata = pageMetadata({
+  title: TITLE_WORK,
+  description: DESC_WORK,
+  path: "/work",
+  siteName: SITE_OWNER,
+  ogImage: ogDefaultImage(),
+});
 
 type ApiListResponse = {
   page: number;
@@ -27,8 +45,19 @@ export default async function WorkPage() {
   const data = await fetchProjects();
   const featuredItem = data.items.find((p) => p.featured);
 
+  const jsonLd = combineJsonLd(
+    breadcrumbsJsonLd([
+      { name: "Home", url: "/" },
+      { name: "Work", url: "/work" },
+    ]),
+    // Expose an ItemList for crawlers (cap handled inside helper; default 48)
+    projectListItemListJsonLd(data.items, "Projects", "/work")
+  );
+
   return (
     <>
+      <JsonLd data={jsonLd} id='work-jsonld' strategy='beforeInteractive' />
+
       <header className='mb-4'>
         <CommentHeader as='h2' className='text-xl mb-2'>
           Work I’ve done
@@ -37,6 +66,7 @@ export default async function WorkPage() {
           A handful of projects across apps, sites, and products.
         </StringText>
       </header>
+
       {/* Auto-open the featured project in the @detail slot on first load of /work */}
       <AutoOpenFeatured slug={featuredItem?.slug} />
 

@@ -5,6 +5,12 @@ import { normalizeMediaPath } from "@/lib/url";
 import CommentHeader from "@/components/CommentHeader";
 import StringText from "@/components/StringText";
 import ProjectCard from "@/components/ProjectCard";
+import JsonLd from "@/components/JsonLd";
+import {
+  websiteJsonLd,
+  projectListItemListJsonLd,
+  combineJsonLd,
+} from "@/lib/seo";
 
 type ApiListResponse = {
   page: number;
@@ -25,8 +31,15 @@ async function fetchProjects(): Promise<ApiListResponse> {
 export default async function HomePage() {
   const data = await fetchProjects();
 
+  const jsonLd = combineJsonLd(
+    websiteJsonLd({ name: "webdevdude", url: "/" }),
+    projectListItemListJsonLd(data.items, "Projects", "/work", 48)
+  );
+
   return (
     <>
+      <JsonLd data={jsonLd} id='home-jsonld' strategy='beforeInteractive' />
+
       <header className='mb-4'>
         <CommentHeader as='h2' className='text-xl mb-2'>
           Work I’ve done
