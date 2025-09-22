@@ -61,8 +61,8 @@ export default function ProjectGallery({
         <Image
           src={hero.url}
           alt={hero.alt ?? title}
-          width={hero.width ?? 1600}
-          height={hero.height ?? 900}
+          width={hero.width ?? 1200}
+          height={hero.height ?? 655}
           className='h-auto w-full object-cover'
           placeholder={blurDataURL ? "blur" : "empty"}
           blurDataURL={blurDataURL}
