@@ -36,7 +36,7 @@ export function pageMetadata(args: {
       card: "summary_large_image",
       title,
       description,
-      ...(ogImage ? { images: [ogImage] as any } : {}),
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
     robots: { index: true, follow: true },
   };
@@ -174,7 +174,7 @@ export function projectListItemListJsonLd(
     const url = `${basePath}/${encodeURIComponent(p.slug)}`;
     const image =
       (Array.isArray(p.media) && p.media[0]?.url) ||
-      (typeof (p as any).thumb === "string" ? (p as any).thumb : undefined);
+      p.thumb;
 
     return {
       "@type": "ListItem",
@@ -211,11 +211,11 @@ export function projectJsonLd(p: Project) {
 
   // Collect some keywords from skills/tasks/tags if present
   const keywords = [
-    ...(p.skills ?? []).map((s: any) => s?.name ?? s?.slug).filter(Boolean),
-    ...(p.tasks ?? []).map((t: any) => t?.name ?? t?.slug).filter(Boolean),
-    ...((p as any)?.tags ?? []),
+    ...(p.skills ?? []).map((skill) => skill.name ?? skill.slug),
+    ...(p.tasks ?? []).map((task) => task.name ?? task.slug),
+    ...(p.tags ?? []),
   ]
-    .filter(Boolean)
+    .filter((keyword): keyword is string => Boolean(keyword))
     .join(", ");
 
   return {
