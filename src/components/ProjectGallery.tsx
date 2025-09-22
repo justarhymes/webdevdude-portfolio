@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useId, useCallback } from "react";
+import React, { useMemo, useState, useId, useCallback, useEffect } from "react";
 import Image from "next/image";
 import type { MediaItem } from "@/types/media";
 
@@ -28,6 +28,13 @@ export default function ProjectGallery({
 }) {
   const initialHero = useMemo(() => media[0], [media]);
   const [hero, setHero] = useState<MediaItem | undefined>(initialHero);
+
+  useEffect(() => {
+    if (!hero) return setHero(initialHero);
+    const first = initialHero;
+    const stillExists = media.some((m) => m && m.url === hero.url);
+    if (!stillExists || (first && first.url !== hero.url)) setHero(first);
+  }, [media, initialHero, hero]);
 
   const galleryLabelId = useId();
   const heroLabelId = useId();

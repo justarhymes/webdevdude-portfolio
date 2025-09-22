@@ -2,6 +2,8 @@ import type { SlugRef } from "./common";
 import type { MediaItem } from "./media";
 
 export type Project = {
+  createdAt?: string;
+  updatedAt?: string;
   slug: string;
   title: string;
   subtitle?: string;

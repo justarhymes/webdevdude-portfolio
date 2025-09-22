@@ -31,12 +31,15 @@ export default function ProjectDetail({ project }: { project: Project }) {
     secondaryLink,
     blur_data_url,
     media,
+    updatedAt,
   } = project as Project;
 
   const yearText =
     typeof year === "string" ? year : year != null ? String(year) : "";
 
-  const normalizedMedia = normalizeMediaItems(media);
+  const normalizedMedia = normalizeMediaItems(media, {
+    version: updatedAt ?? "",
+  });
 
   // Shared-element names (for card→detail morph; harmless if unsupported)
   const { image: vtImage, title: vtTitle } = vtNames(slug);
