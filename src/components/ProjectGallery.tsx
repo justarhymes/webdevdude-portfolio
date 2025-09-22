@@ -29,17 +29,23 @@ export default function ProjectGallery({
   const initialHero = useMemo(() => media[0], [media]);
   const [hero, setHero] = useState<MediaItem | undefined>(initialHero);
 
-  useEffect(() => {
-    if (!hero) return setHero(initialHero);
-    const first = initialHero;
-    const stillExists = media.some((m) => m && m.url === hero.url);
-    if (!stillExists || (first && first.url !== hero.url)) setHero(first);
-  }, [media, initialHero, hero]);
-
   const galleryLabelId = useId();
   const heroLabelId = useId();
 
   const onThumbActivate = useCallback((item: MediaItem) => setHero(item), []);
+
+  useEffect(() => {
+    if (!hero && initialHero) {
+      setHero(initialHero);
+      return;
+    }
+    if (hero) {
+      const stillExists = media.some((m) => m && m.url === hero.url);
+      if (!stillExists) {
+        setHero(initialHero);
+      }
+    }
+  }, [media, initialHero, hero]);
 
   if (!hero) return null;
 
